@@ -8,7 +8,9 @@
 
 3. The current initial layout on the master branch is full of empty files and folders, hope this helps!
 
+# Link to LiveDoc: 
 
+(https://docs.google.com/document/d/1FhQnwnsNYBp8QW5frk8SY1StiPZnHDM22BQBvJZwxHs/edit?usp=sharing) 
 
 # Welcome to Gigapet v 1.0!
 
