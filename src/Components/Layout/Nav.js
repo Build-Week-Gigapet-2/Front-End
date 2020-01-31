@@ -4,8 +4,6 @@ import {
   Container,
   AppBar,
   Toolbar,
-  IconButton,
-  MenuItem,
   Typography,
   Button
 } from '@material-ui/core';
@@ -31,6 +29,15 @@ function Nav()
                             Gigapet
                         </Typography>
                         <div className='nav-items'>
+                            {
+                                /*
+                                    TODO:
+
+                                    Change menu buttons when user logs-in
+                                    - add username text
+                                    - add logout button
+                                */
+                            }
                             <Button color='inherit' className={classes.buttonSpacing}>Login</Button>
                             <Button color='inherit' className={classes.buttonSpacing}>Sign Up</Button>
                         </div>
