@@ -58,6 +58,4 @@ function Login(props) {
     )
 }
 
-const mapStateToProps = ({ authReducer }) => ({
-    user: authReducer.user
-})
+export default Login;

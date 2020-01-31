@@ -8,7 +8,7 @@ import PrivateRoute from './Utils/PrivateRoute';
 // importing Contexts
 import ChildContext from "./contexts/ChildContext";
 import FoodContext from "./contexts/FoodContext";
-import UserContext from "./contexts/ChildContext";
+import UserContext from "./contexts/UserContext";
 
 // importing Page Components
 import Nav from './Components/Layout/Nav';
@@ -32,26 +32,29 @@ import AddChild from './Components/User/addChild';
 function App() {
   return (
     <div className="App">
-      <UserContext.Provider>
-      <Route path='/' component={Nav} />
-      <div className='content'>
-      <h2> Welcome to Gigapet</h2>
-      <p>If you see this, everything is running!</p>
-      </div>
+      <UserContext.Provider> 
+        <ChildContext.provider>
+          <Route path='/' component={Nav} />
+          <div className='content'>
+          <h2> Welcome to Gigapet</h2>
+          <p>If you see this, everything is running!</p>
+          </div>
+          
+
+          <Switch>
+            <Route exact path='/' component={Home} />
+            <Route exact path='/api/auth/login' component={Login} />
+            <Route exact path='/api/auth/register' component={Register} />
+            <PrivateRoute exacth path='/api/users/:id/children' component={UserPage} />
+            {/* <PrivateRoute exact path='/api/' component={AddChild} /> */}
+            <PrivateRoute exact path='/api/users/:id/children/:id' component={ChildPage} />
+            {/* <PrivateRoute exact path='/api/' component={FoodForm} /> */}
+            <PrivateRoute exact path='/logout' component={Logout} />
+          </Switch>
+
+          <Footer />
+        </ChildContext.provider>
       </UserContext.Provider>
-
-      <Switch>
-        <Route exact path='/' component={Home} />
-        <Route exact path='/api/auth/login' component={Login} />
-        <Route exact path='/api/auth/register' component={Register} />
-        <PrivateRoute exacth path='/api/users/:id/children' component={UserPage} />
-        {/* <PrivateRoute exact path='/api/' component={AddChild} /> */}
-        <PrivateRoute exact path='/api/users/:id/children/:id' component={ChildPage} />
-        {/* <PrivateRoute exact path='/api/' component={FoodForm} /> */}
-        <PrivateRoute exact path='/logout' component={Logout} />
-      </Switch>
-
-      <Footer />
     </div>
   );
 }
