@@ -1,25 +1,55 @@
-// import React, { Fragment } from 'react';
-// import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { logout } from '../../Actions/auth';
 
+// Imports for styling
+import { makeStyles } from '@material-ui/core/styles';
+import {
+  Container,
+  AppBar,
+  Toolbar,
+  Typography,
+  Button
+} from '@material-ui/core';
 
-// const Nav = props => {
+const Nav = props =>{
 
-//     const logged = localStorage.getItem('token');
+    
 
+    const handleLogout = () => {
+        props.logout();
+        props.history.push('/')
 
-//     return (
-//         <Fragment>
-//             <div>
-//                 <Link to='/'>Home</Link>
-//                 {logged && <Link to='/'>Home</Link>}
-//                 {!logged && <Link to= '/Login'>Log In</Link>}
-//                 {logged && <button className='logout-btn' onClick>Logout</button>}
-//                 {!logged && <Link to='/Register'>Sign Up</Link>}
-//                 <Link to='/Search'>Search</Link>
-//             </div>
-//         </Fragment>
-//     )
-// }
+    }
 
+    const classes = makeStyles(theme => ({
+        menuSeparator: {
+            justifyContent: 'space-between',
+        },
+        buttonSpacing: {
+            marginLeft: theme.spacing(2),
+        },
+    }))();
 
-// export default Nav;
+    return (
+        <div className='nav-bar'>
+            <AppBar position='fixed'>
+                <Container>
+                    <Toolbar className={classes.menuSeparator}>
+                        <Typography variant='h6'>
+                            Gigapet
+                        </Typography>
+                        <div className='nav-items'>
+                            <Button color='inherit' className={classes.buttonSpacing}> <Link to='/'  >Home</Link></Button>
+                             <Button color='inherit' className={classes.buttonSpacing}> <Link to='/api/auth/login'>Login</Link></Button>
+                           <Button color='inherit' className={classes.buttonSpacing}> <Link to='/api/auth/register'>Sign Up</Link></Button>
+                        </div>
+                    </Toolbar>
+                </Container>
+            </AppBar>
+        </div>
+    )
+}
+
+export default Nav;

@@ -15,7 +15,7 @@ import Nav from './Components/Layout/Nav';
 import Home from './Components/Pages/Home';
 import NotFound from './Components/Pages/NotFound';
 import Footer from './Components/Pages/Footer';
-import ChildPage from './Components/Pages/ChildPage';
+import ChildPage from './Components/User/ChildPage';
 
 // Importing UserPage Components
 import Register from './Components/User/Register';
@@ -23,17 +23,16 @@ import Login from './Components/User/Login';
 import Logout from './Components/User/Logout';
 import UserPage from './Components/User/UserPage';
 
-// Importing FormPage Components
+// // Importing FormPage Components
 
-import FoodForm from './Components/User/foodForm';
-import AddChild from './Components/User/addChild';
+// import FoodForm from './Components/User/foodForm';
+// import AddChild from './Components/User/addChild';
 
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <UserContext.Provider> 
-        <ChildContext.provider>
+    <div className="app">
+     
           <Route path='/' component={Nav} />
           <div className='content'>
           <h2> Welcome to Gigapet</h2>
@@ -47,16 +46,14 @@ function App() {
             <Route exact path='/api/auth/register' component={Register} />
             <PrivateRoute exacth path='/api/users/:id/children' component={UserPage} />
             {/* <PrivateRoute exact path='/api/' component={AddChild} /> */}
-            <PrivateRoute exact path='/api/users/:id/children/:id' component={ChildPage} />
+            {/* <PrivateRoute exact path='/api/users/:id/children/:id' component={ChildPage} /> */}
             {/* <PrivateRoute exact path='/api/' component={FoodForm} /> */}
             <PrivateRoute exact path='/logout' component={Logout} />
           </Switch>
 
           <Footer />
-        </ChildContext.provider>
-      </UserContext.Provider>
+     
     </div>
   );
 }
 
-export default App;

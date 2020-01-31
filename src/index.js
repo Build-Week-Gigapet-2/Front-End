@@ -1,16 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, withRouter } from 'react-router-dom';
-import './index.css';
 import App from './App';
+import { BrowserRouter } from 'react-router-dom';
+
+// Redux & Store
+import { Provider } from 'react-redux';
+import store from './Utils/Store';
+
+// Styles
+import './index.css';
 
 
-const AppWithRouter = withRouter(App);
+const AppWithProvider = (
+    <Provider store={store}>
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
+    </Provider>
+)
 
-ReactDOM.render(
-	<Router>
-		<AppWithRouter />
-	</Router>,
-	document.getElementById('root')
-);
-
+ReactDOM.render(AppWithProvider, document.getElementById('root'));

@@ -1,5 +1,8 @@
 import React, { Fragment, useState } from 'react'
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { login } from '../../Actions/auth';
+
 
 function Login(props) {
     const [userData, setUserData] = useState({
@@ -22,8 +25,7 @@ function Login(props) {
         e.preventDefault()
         asyncLogin()
         props.history.push('/')
-        // props.login(userData)
-        // props.history.push('/')        
+            
     }
 
     return (
@@ -58,4 +60,8 @@ function Login(props) {
     )
 }
 
-export default Login;
+const mapStateToProps = ({ authReducer }) => ({
+    user: authReducer.user
+})
+
+export default connect(mapStateToProps, { login })(Login);

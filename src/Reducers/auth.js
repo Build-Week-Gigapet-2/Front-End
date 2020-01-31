@@ -1,4 +1,4 @@
-import { userConstants } from '../actions/types';
+import { userConstants } from '../Actions/types';
 
 
 export const initialState = {
