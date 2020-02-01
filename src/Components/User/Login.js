@@ -2,7 +2,10 @@ import React, { Fragment, useState } from 'react'
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { login } from '../../Actions/auth';
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from '@material-ui/core/styles';
+import Alien from './Images/alien.png';
+import Fruits from './Images/fruits.png';
+import Eggplant from './Images/eggplant.png';
 
 
 function Login(props) {
@@ -51,6 +54,7 @@ function Login(props) {
       const imageStyle = makeStyles({
         root: {
           height: "20vh",
+          padding: "0 200px",
         }
       });
 
@@ -76,8 +80,12 @@ function Login(props) {
 
     return (
         <Fragment>
-            
-            
+            <div>
+                <img src={Alien} alt='Happy Alien' className={images.root} />
+                <img src={Fruits} alt='Assortment of Fruit' className={images.root} />
+                <img src={Eggplant} alt='Happy Eggplant' className={images.root} />
+            </div>
+        
             <form onSubmit={handleSubmit} className={forms.root}>
                 <input 
                     type='text'
