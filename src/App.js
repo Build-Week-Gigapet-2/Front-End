@@ -29,17 +29,15 @@ import UserPage from './Components/User/UserPage';
 // import AddChild from './Components/User/addChild';
 
 
-export default function App() {
+function App() {
   return (
     <div className="app">
-     
           <Route path='/' component={Nav} />
           <div className='content'>
           <h2> Welcome to Gigapet</h2>
           <p>If you see this, everything is running!</p>
           </div>
           
-
           <Switch>
             <Route exact path='/' component={Home} />
             <Route exact path='/api/auth/login' component={Login} />
@@ -50,8 +48,10 @@ export default function App() {
             {/* <PrivateRoute exact path='/api/' component={FoodForm} /> */}
             <PrivateRoute exact path='/logout' component={Logout} />
           </Switch>
-
+    
           <Footer />
-     
     </div>
   );
+ }
+
+export default App;
