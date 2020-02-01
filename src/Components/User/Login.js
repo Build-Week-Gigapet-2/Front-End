@@ -2,6 +2,7 @@ import React, { Fragment, useState } from 'react'
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { login } from '../../Actions/auth';
+import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import Alien from './Images/alien.png';
 import Fruits from './Images/fruits.png';
@@ -75,7 +76,7 @@ function Login(props) {
         root:{
             textDecoration: 'none',
             fontSize: '20px',
-            
+            color: 'blue'
         }
     })
 
@@ -113,7 +114,7 @@ function Login(props) {
                     onChange={handleChange}
                 />
             
-                <button type='submit' className={button.root}>Sign In</button>
+                <Button type='submit' variant="contained" color="primary" >Sign In</Button>
             </form>
             <div className="reg">
                 <h3>Don't have an account?</h3>
