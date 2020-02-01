@@ -42,8 +42,7 @@ const classes = makeStyles(theme => ({
                             <Button color='inherit' className={classes.buttonSpacing}> <Link to='/'  >Home</Link></Button>
                              <Button color='inherit' className={classes.buttonSpacing}> <Link to='/api/auth/login'>Login</Link></Button>
                            <Button color='inherit' className={classes.buttonSpacing}> <Link to='/api/auth/register'>Sign Up</Link></Button>
-                            <Button color='inherit' className={classes.buttonSpacing}>Login</Button>
-                            <Button color='inherit' className={classes.buttonSpacing}>Sign Up</Button>
+                            
                         </div>
                     </Toolbar>
                 </Container>
