@@ -25,9 +25,9 @@ export const logout = () => dispatch => {
 
 export const register = newUser => dispatch => {
     console.log(newUser, 'newUser in register action')
-    dispatch({ type: userConstants.REGISTER_USER });
+    dispatch({ type: userConstants.REGISTER_REQUEST });
 
-    axios.post('https://gigapets2.herokuapp.com/api/auth/login', newUser)
+    axios.post('https://gigapets2.herokuapp.com/api/auth/register', newUser)
         .then(res =>{
             localStorage.setItem('token', JSON.stringify(res.data.token))
             dispatch({ type: userConstants.REGISTER_SUCCESS });
