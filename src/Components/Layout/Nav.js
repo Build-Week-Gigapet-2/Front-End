@@ -15,18 +15,13 @@ import {
   Button
 } from '@material-ui/core';
 
-const Nav = props =>{
-
-    
-
+const Nav = props => {
     const handleLogout = () => {
         props.logout();
         props.history.push('/')
-
     }
-function Nav()
-{
-    const classes = makeStyles(theme => ({
+    
+const classes = makeStyles(theme => ({
         menuSeparator: {
             justifyContent: 'space-between',
         },
