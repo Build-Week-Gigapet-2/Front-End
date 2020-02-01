@@ -43,7 +43,7 @@ function Login(props) {
         }
       });
     
-      const styledInput = makeStyles({
+    const styledInput = makeStyles({
         root: {
           margin: '10px 0',
           backgroundColor: 'white',
@@ -51,7 +51,7 @@ function Login(props) {
         }
       });
 
-      const imageStyle = makeStyles({
+    const imageStyle = makeStyles({
         root: {
           height: "20vh",
           padding: "0 200px",
@@ -71,11 +71,20 @@ function Login(props) {
         }
       });
 
+    const styledLink = makeStyles({
+        root:{
+            textDecoration: 'none',
+            fontSize: '20px',
+            
+        }
+    })
 
-      const button = submitButton();
-      const images = imageStyle();
-      const forms = styledForm();
-      const inputs = styledInput();
+
+    const button = submitButton();
+    const images = imageStyle();
+    const forms = styledForm();
+    const inputs = styledInput();
+    const links = styledLink();
     
 
     return (
@@ -107,8 +116,8 @@ function Login(props) {
                 <button type='submit' className={button.root}>Sign In</button>
             </form>
             <div className="reg">
-                <p>Don't have an account?</p>
-                <Link to='/api/auth/register'>Sign Up</Link>
+                <h3>Don't have an account?</h3>
+                <Link to='/api/auth/register' className={links.root} >Sign Up</Link>
             </div>
         </Fragment>
     )
