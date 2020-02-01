@@ -9,6 +9,8 @@ import {
   Container,
   AppBar,
   Toolbar,
+  IconButton,
+  MenuItem,
   Typography,
   Button
 } from '@material-ui/core';
@@ -22,7 +24,8 @@ const Nav = props =>{
         props.history.push('/')
 
     }
-
+function Nav()
+{
     const classes = makeStyles(theme => ({
         menuSeparator: {
             justifyContent: 'space-between',
@@ -44,6 +47,8 @@ const Nav = props =>{
                             <Button color='inherit' className={classes.buttonSpacing}> <Link to='/'  >Home</Link></Button>
                              <Button color='inherit' className={classes.buttonSpacing}> <Link to='/api/auth/login'>Login</Link></Button>
                            <Button color='inherit' className={classes.buttonSpacing}> <Link to='/api/auth/register'>Sign Up</Link></Button>
+                            <Button color='inherit' className={classes.buttonSpacing}>Login</Button>
+                            <Button color='inherit' className={classes.buttonSpacing}>Sign Up</Button>
                         </div>
                     </Toolbar>
                 </Container>
