@@ -1,4 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { logout } from '../../Actions/auth';
+
+// Imports for styling
 import { makeStyles } from '@material-ui/core/styles';
 import {
   Container,
@@ -10,10 +15,13 @@ import {
   Button
 } from '@material-ui/core';
 
-function Nav()
-{
-
-    const classes = makeStyles(theme => ({
+const Nav = props => {
+    const handleLogout = () => {
+        props.logout();
+        props.history.push('/')
+    }
+    
+const classes = makeStyles(theme => ({
         menuSeparator: {
             justifyContent: 'space-between',
         },
@@ -31,6 +39,9 @@ function Nav()
                             Gigapet
                         </Typography>
                         <div className='nav-items'>
+                            <Button color='inherit' className={classes.buttonSpacing}> <Link to='/'  >Home</Link></Button>
+                             <Button color='inherit' className={classes.buttonSpacing}> <Link to='/api/auth/login'>Login</Link></Button>
+                           <Button color='inherit' className={classes.buttonSpacing}> <Link to='/api/auth/register'>Sign Up</Link></Button>
                             <Button color='inherit' className={classes.buttonSpacing}>Login</Button>
                             <Button color='inherit' className={classes.buttonSpacing}>Sign Up</Button>
                         </div>

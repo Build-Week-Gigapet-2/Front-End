@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function foodData() {
+export default function foodItem() {
     return (
         <div>
             
