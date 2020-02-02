@@ -2,7 +2,7 @@ import React, { Fragment, useState } from 'react'
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { login } from '../../Actions/auth';
-import { Button, TextField } from '@material-ui/core';
+import { Button, TextField, Typography } from '@material-ui/core';
 
 
 function Login(props) {
@@ -31,6 +31,9 @@ function Login(props) {
 
     return (
         <Fragment>
+            <Typography variant="h2" component="h1">
+                <strong>Login</strong> to Gigapet
+            </Typography>
             <form onSubmit={handleSubmit} className='log-form'>
                 <TextField
                     type='text'

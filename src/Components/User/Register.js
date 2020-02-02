@@ -2,7 +2,7 @@ import React, { Fragment, useState } from 'react'
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { register } from '../../Actions/auth';
-import { Button, TextField } from '@material-ui/core';
+import { Button, TextField, Typography } from '@material-ui/core';
 
 function Register(props) {
     const [newUser, setNewUser] = useState({
@@ -28,10 +28,10 @@ function Register(props) {
     return (
         <Fragment>
             <div>
-
-
+                <Typography variant="h2" component="h1">
+                    <strong>Sign Up</strong> to Gigapet
+                </Typography>
                 <form onSubmit={handleSubmit} className='log-form'>
-
                     <TextField
                         type='text'
                         className='log-input'
@@ -41,7 +41,6 @@ function Register(props) {
                         value={newUser.username}
                         onChange={handleChange}
                     />
-
                     <TextField
                         type='password'
                         className='log-input'
@@ -51,11 +50,9 @@ function Register(props) {
                         value={newUser.password}
                         onChange={handleChange}
                     />
-
                     <Button type='submit' className='log-btn'>Sign Up</Button>
                 </form>
-                </div>
-
+            </div>
             <div className="reg">
                 <p>Already have an account?</p>
                 <Link to='/api/auth/login'>
