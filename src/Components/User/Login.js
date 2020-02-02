@@ -2,6 +2,7 @@ import React, { Fragment, useState } from 'react'
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { login } from '../../Actions/auth';
+import { makeStyles } from '@material-ui/core/styles';
 import { Button, TextField, Typography } from '@material-ui/core';
 
 
@@ -26,8 +27,13 @@ function Login(props) {
         e.preventDefault()
         asyncLogin()
         props.history.push('/')
-
     }
+
+    const classes = makeStyles(theme => ({
+            input: {
+                marginBottom: '10px'
+            },
+    }))();
 
     return (
         <Fragment>
@@ -37,19 +43,19 @@ function Login(props) {
             <form onSubmit={handleSubmit} className='log-form'>
                 <TextField
                     type='text'
-                    className='log-input'
+                    className={`${classes.input}`}
                     name='username'
                     variant='outlined'
-                    placeholder='Username'
+                    label='Username'
                     value={userData.username}
                     onChange={handleChange}
                 />
                 <TextField
                     type='password'
-                    className='log-input'
+                    className={`${classes.input}`}
                     name='password'
                     variant='outlined'
-                    placeholder='Password'
+                    label='Password'
                     value={userData.password}
                     onChange={handleChange}
                 />
