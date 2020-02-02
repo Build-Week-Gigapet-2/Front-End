@@ -2,14 +2,15 @@ import React, { Fragment, useState } from 'react'
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { register } from '../../Actions/auth';
+import { Button, TextField } from '@material-ui/core';
 
 function Register(props) {
     const [newUser, setNewUser] = useState({
         username: '',
         password: '',
-       
+
     })
-    
+
     const handleChange = e => {
         setNewUser({
             ...newUser,
@@ -27,35 +28,39 @@ function Register(props) {
     return (
         <Fragment>
             <div>
-              
+
 
                 <form onSubmit={handleSubmit} className='log-form'>
-                 
-                    <input 
+
+                    <TextField
                         type='text'
-                        className='log-input' 
-                        name='username' 
+                        className='log-input'
+                        name='username'
+                        variant='outlined'
                         placeholder='Username'
                         value={newUser.username}
-                        onChange={handleChange} 
+                        onChange={handleChange}
                     />
 
-                    <input
-                        type='password' 
+                    <TextField
+                        type='password'
                         className='log-input'
-                        name='password' 
+                        name='password'
+                        variant='outlined'
                         placeholder='Password'
                         value={newUser.password}
-                        onChange={handleChange} 
+                        onChange={handleChange}
                     />
-                
-                    <button type='submit' className='log-btn'>Sign Up</button>
+
+                    <Button type='submit' className='log-btn'>Sign Up</Button>
                 </form>
                 </div>
 
             <div className="reg">
                 <p>Already have an account?</p>
-                <Link to='/api/auth/login'>Sign In</Link>
+                <Link to='/api/auth/login'>
+                    <Button> Sign In </Button>
+                </Link>
             </div>
         </Fragment>
     )

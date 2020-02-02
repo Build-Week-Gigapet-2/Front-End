@@ -20,7 +20,7 @@ const Nav = props => {
         props.logout();
         props.history.push('/')
     }
-    
+
 const classes = makeStyles(theme => ({
         menuSeparator: {
             justifyContent: 'space-between',
@@ -39,10 +39,15 @@ const classes = makeStyles(theme => ({
                             Gigapet
                         </Typography>
                         <div className='nav-items'>
-                            <Button color='inherit' className={classes.buttonSpacing}> <Link to='/'  >Home</Link></Button>
-                             <Button color='inherit' className={classes.buttonSpacing}> <Link to='/api/auth/login'>Login</Link></Button>
-                           <Button color='inherit' className={classes.buttonSpacing}> <Link to='/api/auth/register'>Sign Up</Link></Button>
-                            
+                            <Button color='inherit' className={classes.buttonSpacing}>
+                                <Link to='/'  >Home</Link>
+                            </Button>
+                            <Button color='inherit' className={classes.buttonSpacing}>
+                                <Link to='/api/auth/login'>Login</Link>
+                            </Button>
+                            <Button color='inherit' className={classes.buttonSpacing}>
+                                <Link to='/api/auth/register'>Sign Up</Link>
+                            </Button>
                         </div>
                     </Toolbar>
                 </Container>

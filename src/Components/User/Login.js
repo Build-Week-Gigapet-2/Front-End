@@ -2,6 +2,7 @@ import React, { Fragment, useState } from 'react'
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { login } from '../../Actions/auth';
+import { Button, TextField } from '@material-ui/core';
 
 
 function Login(props) {
@@ -9,7 +10,7 @@ function Login(props) {
         username: '',
         password: '',
     })
-    
+
     const handleChange = e => {
         setUserData({
             ...userData,
@@ -25,36 +26,38 @@ function Login(props) {
         e.preventDefault()
         asyncLogin()
         props.history.push('/')
-            
+
     }
 
     return (
         <Fragment>
-            
-            
             <form onSubmit={handleSubmit} className='log-form'>
-                <input 
+                <TextField
                     type='text'
-                    className='log-input' 
-                    name='username' 
+                    className='log-input'
+                    name='username'
+                    variant='outlined'
                     placeholder='Username'
                     value={userData.username}
                     onChange={handleChange}
                 />
-                <input 
-                    type='password' 
+                <TextField
+                    type='password'
                     className='log-input'
-                    name='password' 
+                    name='password'
+                    variant='outlined'
                     placeholder='Password'
                     value={userData.password}
                     onChange={handleChange}
                 />
-            
-                <button type='submit' className='log-btn'>Sign In</button>
+
+                <Button type='submit' className='log-btn'>Sign In</Button>
             </form>
             <div className="reg">
                 <p>Don't have an account?</p>
-                <Link to='/api/auth/register'>Sign Up</Link>
+                <Link to='/api/auth/register'>
+                    <Button> Sign Up </Button>
+                </Link>
             </div>
         </Fragment>
     )
