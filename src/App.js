@@ -35,23 +35,23 @@ import { Container } from '@material-ui/core';
 function App() {
     return (
       <div className="app">
-            <Route path='/' component={Nav} />
+          <Route path='/' component={Nav} />
 
-            <div className='content'>
-                <Container>
-                    <Switch>
-                      <Route exact path='/' component={Home} />
-                      <Route exact path='/api/auth/login' component={Login} />
-                      <Route exact path='/api/auth/register' component={Register} />
-                      <PrivateRoute exacth path='/api/users/:id/children' component={UserPage} />
-                      {/* <PrivateRoute exact path='/api/' component={AddChild} /> */}
-                      {/* <PrivateRoute exact path='/api/users/:id/children/:id' component={ChildPage} /> */}
-                      {/* <PrivateRoute exact path='/api/' component={FoodForm} /> */}
-                      <PrivateRoute exact path='/logout' component={Logout} />
-                    </Switch>
+          <div className='content'>
+              <Container>
+                  <Switch>
+                    <Route exact path='/' component={Home} />
+                    <Route exact path='/api/auth/login' component={Login} />
+                    <Route exact path='/api/auth/register' component={Register} />
+                    <PrivateRoute exacth path='/api/users/:id/children' component={UserPage} />
+                    {/* <PrivateRoute exact path='/api/' component={AddChild} /> */}
+                    {/* <PrivateRoute exact path='/api/users/:id/children/:id' component={ChildPage} /> */}
+                    {/* <PrivateRoute exact path='/api/' component={FoodForm} /> */}
+                    <PrivateRoute exact path='/logout' component={Logout} />
+                  </Switch>
+              </Container>
 
-                    <Footer />
-                </Container>
+              <Footer />
           </div>
       </div>
     );
