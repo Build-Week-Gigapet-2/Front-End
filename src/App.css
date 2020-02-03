@@ -2,6 +2,24 @@
   text-align: center;
 }
 
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.content h1 {
+  margin-bottom: 50px;
+}
+
 .content {
   margin-top: 100px;
+}
+
+
+form.log-form {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
 }

@@ -2,6 +2,8 @@ import React, { Fragment, useState } from 'react'
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { login } from '../../Actions/auth';
+import { makeStyles } from '@material-ui/core/styles';
+import { Button, TextField, Typography } from '@material-ui/core';
 
 
 function Login(props) {
@@ -9,7 +11,7 @@ function Login(props) {
         username: '',
         password: '',
     })
-    
+
     const handleChange = e => {
         setUserData({
             ...userData,
@@ -25,36 +27,46 @@ function Login(props) {
         e.preventDefault()
         asyncLogin()
         props.history.push('/')
-            
     }
+
+    const classes = makeStyles(theme => ({
+            input: {
+                marginBottom: '10px'
+            },
+    }))();
 
     return (
         <Fragment>
-            
-            
+            <Typography variant="h2" component="h1">
+                <strong>Login</strong> to Gigapet
+            </Typography>
             <form onSubmit={handleSubmit} className='log-form'>
-                <input 
+                <TextField
                     type='text'
-                    className='log-input' 
-                    name='username' 
-                    placeholder='Username'
+                    className={`${classes.input}`}
+                    name='username'
+                    variant='outlined'
+                    label='Username'
                     value={userData.username}
                     onChange={handleChange}
                 />
-                <input 
-                    type='password' 
-                    className='log-input'
-                    name='password' 
-                    placeholder='Password'
+                <TextField
+                    type='password'
+                    className={`${classes.input}`}
+                    name='password'
+                    variant='outlined'
+                    label='Password'
                     value={userData.password}
                     onChange={handleChange}
                 />
-            
-                <button type='submit' className='log-btn'>Sign In</button>
+
+                <Button type='submit' className='log-btn'>Sign In</Button>
             </form>
             <div className="reg">
                 <p>Don't have an account?</p>
-                <Link to='/api/auth/register'>Sign Up</Link>
+                <Link to='/api/auth/register'>
+                    <Button> Sign Up </Button>
+                </Link>
             </div>
         </Fragment>
     )
