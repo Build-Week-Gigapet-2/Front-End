@@ -9,11 +9,23 @@ const FoodForm = ({setFormState, setId, actions}) => {
         category_id: '',
         date: '',
     })
+
+    const [category, setCategory] = useState({
+        category_id: '',
+    })
+
     const handleChange = e => {
         setFood({
             ...food,
             [e.target.name]: e.target.value
 
+        })
+    }
+
+    const makeChange = e => {
+        setCategory({
+            ...category,
+            [e.target.name]: e.target.value
         })
     }
 
