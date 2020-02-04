@@ -35,6 +35,13 @@ function Login(props) {
 
     //Styling Begins here
 
+    const pageStyle = makeStyles({
+        root:{
+            backgroundColor: '#2A2E39',
+            height: '100vh',
+        }
+    })
+
     const styledForm = makeStyles({
         root: {
           display: "flex",
@@ -59,51 +66,68 @@ function Login(props) {
         }
       });
 
+    const bottomDiv = makeStyles({
+        root:{
+            padding: '0 44vw'
+        }
+    })
+
     const styledLink = makeStyles({
         root:{
             textDecoration: 'none',
             fontSize: '20px',
-            color: 'blue'
+            color: 'white',
+            border: '1px solid #DB5461',
+            padding: '10px 40px',
+            marginLeft: '2vw',
+            borderRadius: 3,
+            backgroundColor: '#DB5461'
         }
     })
 
+    const page = pageStyle();
     const images = imageStyle();
     const forms = styledForm();
     const inputs = styledInput();
+    const signUp = bottomDiv();
     const links = styledLink();
+    
     
 
     return (
-        <Fragment>
-            <div>
-                <img src={Alien} alt='Happy Alien' className={images.root} />
-                <img src={Fruits} alt='Assortment of Fruit' className={images.root} />
-                <img src={Eggplant} alt='Happy Eggplant' className={images.root} />
-            </div>
-        
-            <form onSubmit={handleSubmit} className={forms.root}>
-                <input 
-                    type='text'
-                    className={inputs.root} 
-                    name='username' 
-                    placeholder='Username'
-                    value={userData.username}
-                    onChange={handleChange}
-                />
-                <input 
-                    type='password' 
-                    className={inputs.root} 
-                    name='password' 
-                    placeholder='Password'
-                    value={userData.password}
-                    onChange={handleChange}
-                />
+        <Fragment >
+            <div className={page.root}>
+                <div>
+                    <img src={Alien} alt='Happy Alien' className={images.root} />
+                    <img src={Fruits} alt='Assortment of Fruit' className={images.root} />
+                    <img src={Eggplant} alt='Happy Eggplant' className={images.root} />
+                </div>
             
-                <Button type='submit' variant="contained" color="primary" >Sign In</Button>
-            </form>
-            <div className="reg">
-                <h3>Don't have an account?</h3>
-                <Link to='/api/auth/register' className={links.root} >Sign Up</Link>
+                <form onSubmit={handleSubmit} className={forms.root}>
+                    <input 
+                        type='text'
+                        className={inputs.root} 
+                        name='username' 
+                        placeholder='Username'
+                        value={userData.username}
+                        onChange={handleChange}
+                    />
+                    <input 
+                        type='password' 
+                        className={inputs.root} 
+                        name='password' 
+                        placeholder='Password'
+                        value={userData.password}
+                        onChange={handleChange}
+                    />
+                
+                    <Button type='submit' variant="contained" color="primary" >Sign In</Button>
+                </form>
+
+                <div className={signUp.root}>
+                    <h3 style={{color: '#DB5461'}}>Don't have an account?</h3>
+                    <Link to='/api/auth/register' className={links.root} >Sign Up</Link>
+                </div>
             </div>
         </Fragment>
     )
