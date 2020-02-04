@@ -12,9 +12,9 @@ function Register(props) {
     const [newUser, setNewUser] = useState({
         username: '',
         password: '',
-       
+
     })
-    
+
     const handleChange = e => {
         setNewUser({
             ...newUser,
@@ -31,79 +31,101 @@ function Register(props) {
 
     //Styling Begins here
 
-    const styledForm = makeStyles({
+    const pageStyle = makeStyles({
         root: {
-          display: "flex",
-          flexDirection: 'column',
-          padding: '0 45vw',
-          margin: '50px 0',
-        }
-      });
-    
-    const styledInput = makeStyles({
-        root: {
-          margin: '10px 0',
-          backgroundColor: 'white',
-          borderRadius: 3,
-        }
-      });
-
-    const imageStyle = makeStyles({
-        root: {
-          height: "20vh",
-          padding: "0 240px",
-        }
-      });
-
-    const styledLink = makeStyles({
-        root:{
-            textDecoration: 'none',
-            fontSize: '20px',
-            color: 'blue'
+            backgroundColor: '#2A2E39',
+            height: '100vh',
         }
     })
 
+    const styledForm = makeStyles({
+        root: {
+            display: "flex",
+            flexDirection: 'column',
+            padding: '0 45vw',
+            margin: '50px 0',
+        }
+    });
 
+    const styledInput = makeStyles({
+        root: {
+            margin: '10px 0',
+            backgroundColor: 'white',
+            borderRadius: 3,
+        }
+    });
+
+    const imageStyle = makeStyles({
+        root: {
+            height: "20vh",
+            padding: "0 235px",
+        }
+    });
+
+    const bottomDiv = makeStyles({
+        root: {
+            padding: '0 43.5vw',
+            
+        }
+    });
+
+    const styledLink = makeStyles({
+        root: {
+            textDecoration: 'none',
+            fontSize: '20px',
+            color: 'white',
+            border: '1px solid #DB5461',
+            padding: '5px 55px',
+            marginLeft: '1.5vw',
+            borderRadius: 3,
+            backgroundColor: '#DB5461'
+        }
+    });
+
+    const page = pageStyle();
     const images = imageStyle();
     const forms = styledForm();
     const inputs = styledInput();
+    const signIn = bottomDiv();
     const links = styledLink();
 
     return (
         <Fragment>
-            <div>
-                <img src={Apple} alt='Happy Apple' className={images.root} />
-                <img src={Pear} alt='Happy pear' className={images.root} />
-                <img src={Potatoes} alt='Happy Potatoe' className={images.root} />
-            </div>
-              
+            <div className={page.root}>
+                <div>
+                    <img src={Apple} alt='Happy Apple' className={images.root} />
+                    <img src={Pear} alt='Happy pear' className={images.root} />
+                    <img src={Potatoes} alt='Happy Potatoe' className={images.root} />
+                </div>
 
-            <form onSubmit={handleSubmit} className={forms.root}>
-                 
-                <input 
-                    type='text'
-                    className={inputs.root}
-                    name='username' 
-                    placeholder='Username'
-                    value={newUser.username}
-                    onChange={handleChange} 
-                />
 
-                <input
-                    type='password' 
-                    className={inputs.root}
-                    name='password' 
-                    placeholder='Password'
-                    value={newUser.password}
-                    onChange={handleChange} 
-                />
-                
-                <Button type='submit' variant="contained" color="primary">Sign Up</Button>
-            </form>
+                <form onSubmit={handleSubmit} className={forms.root}>
 
-            <div className="reg">
-                <h3>Already have an account?</h3>
-                <Link to='/api/auth/login' className={links.root}>Sign In</Link>
+                    <input
+                        type='text'
+                        className={inputs.root}
+                        name='username'
+                        placeholder='Username'
+                        value={newUser.username}
+                        onChange={handleChange}
+                    />
+
+                    <input
+                        type='password'
+                        className={inputs.root}
+                        name='password'
+                        placeholder='Password'
+                        value={newUser.password}
+                        onChange={handleChange}
+                    />
+
+                    <Button type='submit' variant="contained" color="primary">Sign Up</Button>
+                </form>
+
+                <div className={signIn.root}>
+                    <h3 style={{ color: '#DB5461' }}>Already have an account?</h3>
+                    <Link to='/api/auth/login' className={links.root}>Sign In</Link>
+                </div>
             </div>
         </Fragment>
     )

@@ -14,7 +14,7 @@ function Login(props) {
         username: '',
         password: '',
     })
-    
+
     const handleChange = e => {
         setUserData({
             ...userData,
@@ -30,13 +30,13 @@ function Login(props) {
         e.preventDefault()
         asyncLogin()
         props.history.push('/')
-            
+
     }
 
     //Styling Begins here
 
     const pageStyle = makeStyles({
-        root:{
+        root: {
             backgroundColor: '#2A2E39',
             height: '100vh',
         }
@@ -44,42 +44,42 @@ function Login(props) {
 
     const styledForm = makeStyles({
         root: {
-          display: "flex",
-          flexDirection: 'column',
-          padding: '0 45vw',
-          margin: '50px 0',
+            display: "flex",
+            flexDirection: 'column',
+            padding: '0 45vw',
+            margin: '50px 0',
         }
-      });
-    
+    });
+
     const styledInput = makeStyles({
         root: {
-          margin: '10px 0',
-          backgroundColor: 'white',
-          borderRadius: 3,
+            margin: '10px 0',
+            backgroundColor: 'white',
+            borderRadius: 3,
         }
-      });
+    });
 
     const imageStyle = makeStyles({
         root: {
-          height: "20vh",
-          padding: "0 200px",
+            height: "20vh",
+            padding: "0 200px",
         }
-      });
+    });
 
     const bottomDiv = makeStyles({
-        root:{
+        root: {
             padding: '0 44vw'
         }
     })
 
     const styledLink = makeStyles({
-        root:{
+        root: {
             textDecoration: 'none',
             fontSize: '20px',
             color: 'white',
             border: '1px solid #DB5461',
-            padding: '10px 40px',
-            marginLeft: '2vw',
+            padding: '5px 55px',
+            marginLeft: '1vw',
             borderRadius: 3,
             backgroundColor: '#DB5461'
         }
@@ -91,8 +91,8 @@ function Login(props) {
     const inputs = styledInput();
     const signUp = bottomDiv();
     const links = styledLink();
-    
-    
+
+
 
     return (
         <Fragment >
@@ -102,30 +102,30 @@ function Login(props) {
                     <img src={Fruits} alt='Assortment of Fruit' className={images.root} />
                     <img src={Eggplant} alt='Happy Eggplant' className={images.root} />
                 </div>
-            
+
                 <form onSubmit={handleSubmit} className={forms.root}>
-                    <input 
+                    <input
                         type='text'
-                        className={inputs.root} 
-                        name='username' 
+                        className={inputs.root}
+                        name='username'
                         placeholder='Username'
                         value={userData.username}
                         onChange={handleChange}
                     />
-                    <input 
-                        type='password' 
-                        className={inputs.root} 
-                        name='password' 
+                    <input
+                        type='password'
+                        className={inputs.root}
+                        name='password'
                         placeholder='Password'
                         value={userData.password}
                         onChange={handleChange}
                     />
-                
+
                     <Button type='submit' variant="contained" color="primary" >Sign In</Button>
                 </form>
 
                 <div className={signUp.root}>
-                    <h3 style={{color: '#DB5461'}}>Don't have an account?</h3>
+                    <h3 style={{ color: '#DB5461' }}>Don't have an account?</h3>
                     <Link to='/api/auth/register' className={links.root} >Sign Up</Link>
                 </div>
             </div>
