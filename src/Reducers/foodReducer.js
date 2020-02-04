@@ -19,12 +19,18 @@ export const initialState = {
       {
         name: '',
         category: '',
+        date: '',
+        unit_measurement: '',
+        quantity: '',
       }
     ],
 
     food: {
         name: '',
         category: '',
+        date: '',
+        unit_measurement: '',
+        quantity: ''
        
     },
 

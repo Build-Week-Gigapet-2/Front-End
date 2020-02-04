@@ -49,7 +49,7 @@ export const getAllFood = () => dispatch => {
 export const getUserFood = () => dispatch => {
     console.log('dispatch?')
     dispatch({ type: FETCH_FOOD_REQUEST })
-        AxiosWithAuth().get(`/api/food/:id`)
+        AxiosWithAuth().get(`/api/user/:id/children/:id/food`)
             .then(res =>{
                 console.log(res.data, '<- Data in fetch dispatch')
                 dispatch({
