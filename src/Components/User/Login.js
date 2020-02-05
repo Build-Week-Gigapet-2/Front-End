@@ -65,7 +65,7 @@ function Login(props) {
     const imageStyle = makeStyles({
         root: {
             height: "20vh",
-            padding: "130px 200px 105px 200px",
+            padding: "130px 200px 120px 200px",
         }
     });
 
