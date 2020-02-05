@@ -46,7 +46,7 @@ function Register(props) {
         root: {
             display: "flex",
             flexDirection: 'column',
-            padding: '0 30vw',
+            padding: '0 27vw',
         }
     });
 
@@ -67,7 +67,7 @@ function Register(props) {
 
     const bottomDiv = makeStyles({
         root: {
-            padding: '0 28vw',
+            padding: '0 24vw',
             marginLeft: '25px'
             
         }

@@ -42,7 +42,7 @@ function Login(props) {
             height: '100vh',
             backgroundImage: `url(${Background})`,
             backgroundRepeat: 'repeat',
-            backgroundSize: '21%',
+            backgroundSize: '21%'
         }
     })
 
@@ -50,7 +50,7 @@ function Login(props) {
         root: {
             display: "flex",
             flexDirection: 'column',
-            padding: '0 30vw',
+            padding: '0 27vw',
         }
     });
 
@@ -71,7 +71,7 @@ function Login(props) {
 
     const bottomDiv = makeStyles({
         root: {
-            padding: '0 30vw'
+            padding: '0 26vw'
         }
     })
 
