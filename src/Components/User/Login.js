@@ -42,7 +42,7 @@ function Login(props) {
             height: '100vh',
             backgroundImage: `url(${Background})`,
             backgroundRepeat: 'repeat',
-            backgroundSize: '11%'
+            backgroundSize: '21%',
         }
     })
 
@@ -50,7 +50,7 @@ function Login(props) {
         root: {
             display: "flex",
             flexDirection: 'column',
-            padding: '0 45vw',
+            padding: '0 30vw',
         }
     });
 
@@ -64,14 +64,14 @@ function Login(props) {
 
     const imageStyle = makeStyles({
         root: {
-            height: "20vh",
-            padding: "130px 200px 120px 200px",
+            height: "15vh",
+            padding: "120px 120px",
         }
     });
 
     const bottomDiv = makeStyles({
         root: {
-            padding: '0 44vw'
+            padding: '0 30vw'
         }
     })
 

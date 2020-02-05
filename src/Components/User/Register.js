@@ -38,7 +38,7 @@ function Register(props) {
             height: '100vh',
             backgroundImage: `url(${Background})`,
             backgroundRepeat: 'repeat',
-            backgroundSize: '11%'
+            backgroundSize: '21%'
         }
     })
 
@@ -46,7 +46,7 @@ function Register(props) {
         root: {
             display: "flex",
             flexDirection: 'column',
-            padding: '0 45vw',
+            padding: '0 30vw',
         }
     });
 
@@ -60,15 +60,15 @@ function Register(props) {
 
     const imageStyle = makeStyles({
         root: {
-            height: "20vh",
-            padding: "130px 200px 120px 200px",
-            marginLeft: "60px",
+            height: "15vh",
+            padding: "120px 143px",
         }
     });
 
     const bottomDiv = makeStyles({
         root: {
-            padding: '0 43.5vw',
+            padding: '0 28vw',
+            marginLeft: '25px'
             
         }
     });

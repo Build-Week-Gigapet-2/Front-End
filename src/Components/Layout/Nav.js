@@ -16,11 +16,15 @@ import {
 } from '@material-ui/core';
 
 const Nav = props => {
+
+    const logged = localStorage.getItem('token');
+
+
     const handleLogout = () => {
         props.logout();
         props.history.push('/')
-    }
-    
+      }
+
 const classes = makeStyles(theme => ({
         menuSeparator: {
             justifyContent: 'space-between',
@@ -39,10 +43,19 @@ const classes = makeStyles(theme => ({
                             Gigapet
                         </Typography>
                         <div className='nav-items'>
-                            <Button color='inherit' className={classes.buttonSpacing}> <Link to='/'  >Home</Link></Button>
-                             <Button color='inherit' className={classes.buttonSpacing}> <Link to='/api/auth/login'>Login</Link></Button>
-                           <Button color='inherit' className={classes.buttonSpacing}> <Link to='/api/auth/register'>Sign Up</Link></Button>
-                            
+                            <Button color='inherit' className={classes.buttonSpacing}>
+                                <Link to='/'>Home</Link>
+                            </Button>
+                            <Button color='inherit' className={classes.buttonSpacing}>
+                                <Link to='/api/users/:id/'>User Page</Link>
+                            </Button>
+                            {!logged && <Button color='inherit' className={classes.buttonSpacing}>
+                                <Link to='/api/auth/login'>Login</Link>
+                            </Button>}
+                            {!logged && <Button color='inherit' className={classes.buttonSpacing}>
+                                <Link to='/api/auth/register'>Sign Up</Link>
+                            </Button>}
+                            {logged && <Button color='inherit' className='logout-btn' onClick={handleLogout}>Logout</Button>}
                         </div>
                     </Toolbar>
                 </Container>
@@ -51,4 +64,10 @@ const classes = makeStyles(theme => ({
     )
 }
 
-export default Nav;
+const mapStateToProps = ({ authReducer }) => ({
+    isLoggedIn: authReducer.isLoggedIn
+  })
+  
+  
+  export default connect(mapStateToProps, { logout })(Nav)
+  
