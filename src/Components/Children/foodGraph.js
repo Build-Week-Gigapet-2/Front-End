@@ -20,13 +20,30 @@ export default function FoodGraph(props)
     //  Is graph data being loaded
     const [isLoading, setIsLoading] = useState(true);
 
-    useEffect(() => {
+    //  Fetch a child's food logs
+    useEffect(() =>
+    {
         AxiosWithAuth()
-          .get('/api/users/:id/children/:id/food')
-          .then((res) => {
-              console.log(res);
+          .get('/api/users/:id/children/1/food')
+          .then((res) =>
+          {
+              //  Add data to graph
+              setGraphData(
+                  res.data.map((item, array) =>
+                  {
+                      return {
+                          id: item.name,
+                          label: item.name,
+                          value: item.quantity
+                      }
+                  })
+              );
+
+              //  Show graph + hide loader
+              setIsLoading(false);
           })
-          .catch((err) => {
+          .catch((err) =>
+          {
               console.log('[FoodGraph] Unable to get graph data', err);
           });
     }, []);
