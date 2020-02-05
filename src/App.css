@@ -31,6 +31,28 @@ h6 {
   margin-top: 100px;
 }
 
+.hide {
+  opacity: 0;
+}
+
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.center-full {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+
+.foodGraph {
+  position: relative;
+}
+
 
 form.log-form {
   display: flex;
