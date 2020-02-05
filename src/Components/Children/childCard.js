@@ -6,17 +6,18 @@ import { getAllChildren } from '../../Actions/Children';
 
 function ChildCard(props){
 
-    const loading = props.loading;
+    // const loading = props.loading;
 
     useEffect(() => {
         setTimeout(() => {
             props.getAllChildren()
          }, 500)
-    }, [])
+    }, [] )
 
     // if(loading) {
     // return <Spinner />
     // } else {
+        console.log(props.allChildren);
     return(
             <div>
                     {props.allChildren &&
@@ -24,7 +25,7 @@ function ChildCard(props){
                             return(
                                 <Child 
                                     key={child.id}
-                                    name={child.name} 
+                                    name={child.child} 
                                   />
                             )
                         })
@@ -40,3 +41,5 @@ const mapStateToProps = ({ childReducer }) => ({
 })
 
 export default connect(mapStateToProps, { getAllChildren })(ChildCard);
+
+// export default ChildCard;

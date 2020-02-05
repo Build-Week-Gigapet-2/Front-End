@@ -16,13 +16,13 @@ import {
   export const initialState = {
       children: [
         {
-          name: '',
+          child: '',
           user_id: 0,
         }
       ],
   
       child: {
-          name: '',
+          child: '',
           user_id: 0,
       },
   
@@ -71,7 +71,7 @@ import {
         case ADD_CHILD_SUCCESS:
           return {
             ...state,
-            recipes: action.payload
+            children: action.payload
           };
         case ADD_CHILD_FAILURE:
           return {
@@ -81,7 +81,7 @@ import {
         case EDIT_CHILD_SUCCESS:
           return {
             ...state,
-            recipe: action.payload,
+            child: action.payload,
             editing: true
           }
           
@@ -89,7 +89,7 @@ import {
           return {
             error: 'Add Child Failure'
           }
-          
+
         case DELETE_CHILD_SUCCESS:
           return {
             ...state,

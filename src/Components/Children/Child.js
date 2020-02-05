@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { getAllChildren } from '../../Actions/Children';
+import { connect } from 'react-redux';
 
 const Child = (props) => {
     return (
@@ -16,8 +18,7 @@ const Child = (props) => {
                 <h4 className="child">
                 Name: {props.name}
                 </h4>
-        
-               
+                <button><Link to='/api/users/:id/children/:id'>View Child</Link></button>
         </div>
 
         {/* <Link to='/' className="btn">Let's Eat!</Link> */}
@@ -25,4 +26,10 @@ const Child = (props) => {
     )
 }
 
-export default Child;
+const mapStateToProps = ({ childReducer }) => ({
+    // loading: childReducer.loading,
+    allChildren: childReducer.allChildren
+})
+
+export default connect(mapStateToProps, { getAllChildren })(Child);
+// export default Child;
