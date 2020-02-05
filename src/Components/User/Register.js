@@ -7,6 +7,7 @@ import Button from '@material-ui/core/Button';
 import Apple from './Images/apple.png';
 import Pear from './Images/pear.png';
 import Potatoes from './Images/potatoes.png';
+import Background from './Images/Background.jpg';
 
 function Register(props) {
     const [newUser, setNewUser] = useState({
@@ -33,8 +34,11 @@ function Register(props) {
 
     const pageStyle = makeStyles({
         root: {
-            backgroundColor: '#2A2E39',
+            backgroundColor: '#fff',
             height: '100vh',
+            backgroundImage: `url(${Background})`,
+            backgroundRepeat: 'repeat',
+            backgroundSize: '11%'
         }
     })
 
@@ -123,7 +127,7 @@ function Register(props) {
                 </form>
 
                 <div className={signIn.root}>
-                    <h3 style={{ color: '#DB5461' }}>Already have an account?</h3>
+                    <h3 style={{ color: '#DB5461', fontWeight: 'bold' }}>Already have an account?</h3>
                     <Link to='/api/auth/login' className={links.root}>Sign In</Link>
                 </div>
             </div>

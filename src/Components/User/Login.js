@@ -7,6 +7,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Alien from './Images/alien.png';
 import Fruits from './Images/fruits.png';
 import Eggplant from './Images/eggplant.png';
+import Background from './Images/Background.jpg';
 
 
 function Login(props) {
@@ -37,8 +38,11 @@ function Login(props) {
 
     const pageStyle = makeStyles({
         root: {
-            backgroundColor: '#2A2E39',
+            backgroundColor: '#fff',
             height: '100vh',
+            backgroundImage: `url(${Background})`,
+            backgroundRepeat: 'repeat',
+            backgroundSize: '11%'
         }
     })
 
