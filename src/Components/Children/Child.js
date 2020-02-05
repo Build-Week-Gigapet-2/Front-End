@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { getAllChildren, deleteChild } from '../../Actions/Children';
 import { connect } from 'react-redux';
+import AddChild from '../User/addChild';
 
 const Child = (props) => {
 
@@ -15,9 +16,10 @@ const Child = (props) => {
         <div className="card">
             <div className="header">
                 <div className="homebutton">
-                    <Link to='/'>
+                   <button> <Link to='/'>
                         Home
-                    </Link>
+                    </Link></button>
+                    <button><Link to='/api/users/:id/children'/>Add Child</button>
                 </div>
             </div>
             
@@ -40,5 +42,5 @@ const mapStateToProps = ({ childReducer }) => ({
     allChildren: childReducer.allChildren
 })
 
-export default connect(mapStateToProps, { getAllChildren })(Child);
+export default connect(mapStateToProps, { getAllChildren, deleteChild })(Child);
 // export default Child;

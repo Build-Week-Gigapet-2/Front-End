@@ -20,7 +20,7 @@ function EditChild(props) {
     const handleSubmit = event => {
         event.preventDefault()
         props.editChild(props.child)    
-        props.history.push(`/api/users/1/children/1`)
+        props.history.push(`/api/users/1/children/2`)
     }
 
     return (

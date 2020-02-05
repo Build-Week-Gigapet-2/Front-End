@@ -72,7 +72,7 @@ export const addChild = (child) => dispatch => {
 }
 
 export const editChild = (child) => dispatch => {
-    AxiosWithAuth().put(`/api/users/1/children/${child.id}`, child)
+    AxiosWithAuth().put(`/api/users/1/children/2`, child)
     .then(res => {
         dispatch({ 
             type: EDIT_CHILD_SUCCESS,
@@ -89,7 +89,7 @@ export const editChild = (child) => dispatch => {
 
 export const deleteChild = (child) => dispatch => {
     console.log('delete dispatch')
-    AxiosWithAuth().delete(`/api/users/:id/children/${child.id}`)
+    AxiosWithAuth().delete(`/api/users/1/children/4`)
         .then(res => {
             console.log(res.data)
             dispatch({ 
