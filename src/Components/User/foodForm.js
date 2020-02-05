@@ -6,7 +6,7 @@ import { actionCreators } from '../../Actions/Food'
 const FoodForm = ({setFormState, setId, actions}) => {
     const [food, setFood] = useState({
         name: '',
-        category_id: '',
+        category_id: 0,
         date: '',
         quantity: '',
         unit_measurement: ''
@@ -18,10 +18,12 @@ const FoodForm = ({setFormState, setId, actions}) => {
 
     const handleChange = e => {
         setFood({
+           
             ...food,
             [e.target.name]: e.target.value
 
         })
+        console.log(e.target.value)
     }
 
     // const makeChange = e => {
@@ -52,14 +54,14 @@ const FoodForm = ({setFormState, setId, actions}) => {
             <input type='text' name='quantity' placeholder='Quantity' defaultValue={food.quantity} onChange={handleChange} />
             <input type='text' name='unit_measurement' placeholder='Unit of Measurement' Value={food.unit_measurement} onChange={handleChange} />
            
-            <select>
-                <option defaultValue={food.category_id=1}>Fruit</option>
-                <option defaultValue={food.category_id=2}>Vegetable</option>
-                <option defaultValue={food.category_id=3}>Whole Grains</option>
-                <option defaultValue={food.category_id=4}>Meat</option>
-                <option defaultValue={food.category_id=5}>Dairy</option>
-                <option defaultValue={food.category_id=6}>Fats & Oils</option>
-                <option defaultValue={food.category_id=7}>Treats</option>
+            <select onChange={handleChange}>
+                <option  value={food.category_id=1}>Fruit</option>
+                <option value={food.category_id=2}>Vegetable</option>
+                <option  value={food.category_id=3}>Whole Grains</option>
+                <option  value={food.category_id=4}>Meat</option>
+                <option value={food.category_id=5}>Dairy</option>
+                <option  value={food.category_id=6}>Fats & Oils</option>
+                <option  value={food.category_id=7}>Treats</option>
             </select>
             <button type='submit'>Submit Food</button>
         </form>

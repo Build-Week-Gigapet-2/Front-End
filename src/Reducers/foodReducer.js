@@ -18,7 +18,7 @@ export const initialState = {
     foods: [
       {
         name: '',
-        category: '',
+        category_id: 0,
         date: '',
         unit_measurement: '',
         quantity: '',
@@ -27,7 +27,7 @@ export const initialState = {
 
     food: {
         name: '',
-        category: '',
+        category_id: 0,
         date: '',
         unit_measurement: '',
         quantity: ''
