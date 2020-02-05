@@ -7,6 +7,7 @@ import { getAllChildren } from '../../Actions/Children';
 function ChildCard(props){
 
     // const loading = props.loading;
+    
 
     useEffect(() => {
         setTimeout(() => {

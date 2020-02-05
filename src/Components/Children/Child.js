@@ -1,9 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { getAllChildren } from '../../Actions/Children';
+import { getAllChildren, deleteChild } from '../../Actions/Children';
 import { connect } from 'react-redux';
 
 const Child = (props) => {
+
+    const handleDelete = (e) => {
+        console.log('Handle Delete')
+        e.preventDefault();
+        props.deleteChild(props.child);
+    }
+
     return (
         <div className="card">
             <div className="header">
@@ -19,6 +26,8 @@ const Child = (props) => {
                 Name: {props.name}
                 </h4>
                 <button><Link to='/api/users/:id/children/:id'>View Child</Link></button>
+                <button><Link to='/api/users/:id/children/:id'>Edit Child</Link></button>
+                <button className="btn" onClick={handleDelete}>Delete</button>
         </div>
 
         {/* <Link to='/' className="btn">Let's Eat!</Link> */}
