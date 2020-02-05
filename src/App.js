@@ -45,7 +45,7 @@ function App() {
                     <Route exact path='/api/auth/register' component={Register} />
                     <PrivateRoute exacth path='/api/users/:id/' component={UserPage} />
                     {/* <PrivateRoute exact path='/api/' component={AddChild} /> */}
-                    {/* <PrivateRoute exact path='/api/users/:id/children/:id' component={ChildPage} /> */}
+                    <PrivateRoute exact path='/api/users/:id/children/:id' component={ChildPage} />
                     {/* <PrivateRoute exact path='/api/' component={FoodForm} /> */}
                     <PrivateRoute exact path='/logout' component={Logout} />
                   </Switch>
