@@ -8,12 +8,49 @@ a {
   text-decoration: none;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  cursor: default;
+}
+
+
+.separator {
+  margin: 50px 0;
+}
+
+
 .content h1 {
   margin-bottom: 50px;
 }
 
 .content {
   margin-top: 100px;
+}
+
+.hide {
+  opacity: 0;
+}
+
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.center-full {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+
+.foodGraph {
+  position: relative;
 }
 
 
