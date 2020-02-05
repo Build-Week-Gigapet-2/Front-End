@@ -10,6 +10,7 @@ export default function UserPage() {
         <div>
             <p>User's Page</p>
             <ChildCard />
+          
             <FoodForm />
             <FoodGraph />
         </div>

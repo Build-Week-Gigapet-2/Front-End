@@ -12,10 +12,7 @@ const FoodForm = ({setFormState, setId, actions}) => {
         unit_measurement: ''
     })
 
-    // const [category, setCategory] = useState({
-    //     category_id: '',
-    // })
-
+    
     const handleChange = e => {
         setFood({
            
@@ -26,19 +23,6 @@ const FoodForm = ({setFormState, setId, actions}) => {
         console.log(e.target.value)
     }
 
-    // const makeChange = e => {
-    //     setCategory({
-    //         ...category,
-    //         [e.target.name]: e.target.value
-    //     })
-    // }
-
-    // const toggle = e => {
-    //     setFood({
-    //         ...food,
-    //         private: !food.private
-    //     })
-    // }
 
     const handleSubmit = e => {
         e.preventDefault()
@@ -48,6 +32,8 @@ const FoodForm = ({setFormState, setId, actions}) => {
     }
 
     return (
+        <div>
+        <h1>Add New Food</h1>
         <form onSubmit={handleSubmit}>
             <input type='text' name='name' placeholder='Name' defaultValue={food.name} onChange={handleChange} />
             <input type='text' name='date' placeholder='Date' defaultValue={food.date} onChange={handleChange} />
@@ -65,6 +51,7 @@ const FoodForm = ({setFormState, setId, actions}) => {
             </select>
             <button type='submit'>Submit Food</button>
         </form>
+        </div>
     )
 }
 
