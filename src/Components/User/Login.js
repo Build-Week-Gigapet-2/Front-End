@@ -51,7 +51,6 @@ function Login(props) {
             display: "flex",
             flexDirection: 'column',
             padding: '0 45vw',
-            margin: '50px 0',
         }
     });
 
@@ -66,7 +65,7 @@ function Login(props) {
     const imageStyle = makeStyles({
         root: {
             height: "20vh",
-            padding: "0 200px",
+            padding: "130px 200px 105px 200px",
         }
     });
 
