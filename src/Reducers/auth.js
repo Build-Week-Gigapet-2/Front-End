@@ -5,6 +5,7 @@ export const initialState = {
     user: {
         username: '',
         password: '',
+        user_id: 0,
         
     },
     isLoading: false,

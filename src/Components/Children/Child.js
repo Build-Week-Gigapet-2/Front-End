@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import AddChild from '../User/addChild';
 
 const Child = (props) => {
-
+    console.log(props)
     const handleDelete = (e) => {
         console.log('Handle Delete')
         e.preventDefault();
@@ -19,7 +19,7 @@ const Child = (props) => {
                    <button> <Link to='/'>
                         Home
                     </Link></button>
-                    <button><Link to='/api/users/:id/children'/>Add Child</button>
+                    <button><Link to='/api/users/:id/children'>Add Child</Link></button>
                 </div>
             </div>
             

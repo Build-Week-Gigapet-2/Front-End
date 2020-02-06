@@ -24,7 +24,7 @@ export default function FoodGraph(props)
     useEffect(() =>
     {
         AxiosWithAuth()
-          .get('/api/users/:id/children/1/food')
+          .get('/api/users/1/children/1/food')
           .then((res) =>
           {
               //  Add data to graph

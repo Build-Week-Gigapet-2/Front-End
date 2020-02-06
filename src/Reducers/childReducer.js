@@ -18,12 +18,16 @@ import {
         {
           child: '',
           user_id: 0,
+          child_id: 0,
+
         }
       ],
   
       child: {
           child: '',
           user_id: 0,
+          child_id:0,
+          id: 0
       },
   
       editing: false,
@@ -32,7 +36,7 @@ import {
       error: ''
   }
   
-  export default function recipeReducer(state = initialState, action) {
+  export default function childReducer(state = initialState, action) {
       switch(action.type) {
         case FETCH_CHILD_REQUEST:
           return {

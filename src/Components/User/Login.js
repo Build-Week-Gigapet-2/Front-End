@@ -10,7 +10,9 @@ function Login(props) {
     const [userData, setUserData] = useState({
         username: '',
         password: '',
+        user_id: 0,
     })
+    console.log(userData);
 
     const handleChange = e => {
         setUserData({

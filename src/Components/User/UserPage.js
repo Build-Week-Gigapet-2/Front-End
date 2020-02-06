@@ -6,7 +6,8 @@ import ChildCard from '../Children/childCard';
 import ChildPage from '../User/ChildPage';
 import FoodItem from '../Children/foodItem';
 
-export default function UserPage() {
+export default function UserPage(props) {
+        console.log(props);
     return (
         <div>
             <p>User's Page</p>
