@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { editChild } from '../../Actions/Children';
-
+import FoodForm from '../User/foodForm';
+import EditFood from '../User/editFood';
 
 function EditChild(props) {
     const [child, setChild] = useState({
@@ -37,11 +38,13 @@ function EditChild(props) {
                 />
                 <button className='save'>Save Changes</button>
             </form>
+            <FoodForm />
+            <EditFood />
 
-            <h2>Update Food</h2>
         </div>
     )
 }
+
 
 const mapStateToProps = ({ childReducer }) => ({
     child: childReducer.child
