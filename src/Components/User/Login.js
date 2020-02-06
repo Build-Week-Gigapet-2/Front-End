@@ -4,9 +4,9 @@ import { connect } from 'react-redux';
 import { login } from '../../Actions/auth';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
-import Alien from './Images/alien.png';
 import Fruits from './Images/fruits.png';
 import Eggplant from './Images/eggplant.png';
+import Dino from './Images/dinosaur.png';
 import Background from './Images/Background.jpg';
 
 
@@ -101,7 +101,7 @@ function Login(props) {
         <Fragment >
             <div className={page.root}>
                 <div>
-                    <img src={Alien} alt='Happy Alien' className={images.root} />
+                    <img src={Dino} alt='Happy Alien' className={images.root} />
                     <img src={Fruits} alt='Assortment of Fruit' className={images.root} />
                     <img src={Eggplant} alt='Happy Eggplant' className={images.root} />
                 </div>

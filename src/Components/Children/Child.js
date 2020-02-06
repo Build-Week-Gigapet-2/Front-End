@@ -1,9 +1,49 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { getAllChildren, deleteChild } from '../../Actions/Children';
+import { connect } from 'react-redux';
+import AddChild from '../User/addChild';
+import Button from '@material-ui/core/Button';
 
-export default function Child() {
+const Child = (props) => {
+
+    const handleDelete = (e) => {
+        console.log('Handle Delete')
+        e.preventDefault();
+        props.deleteChild(props.child);
+    }
+
+
+
     return (
         <div>
+            <div >
+                <div className="homebutton">
+                   <Button variant="outlined"> <Link to='/'>
+                        Home
+                    </Link></Button>
+                    <Button variant="outlined"><Link to='/api/users/:id/children'/>Add Child</Button>
+                </div>
+            </div>
             
+        <div>
+                <h4 className="child">
+                Name: {props.name}
+                </h4>
+                <Button size="small" color="primary" variant="outlined"><Link to='/api/users/:id/children/:id'>View Child</Link></Button>
+                <Button size="small" color="primary" variant="outlined"><Link to='/api/users/:id/children/:id'>Edit Child</Link></Button>
+                <Button size="small" color="primary" variant="outlined" className="btn" onClick={handleDelete}>Delete</Button>
+        </div>
+
+        {/* <Link to='/' className="btn">Let's Eat!</Link> */}
         </div>
     )
 }
+
+const mapStateToProps = ({ childReducer }) => ({
+    // loading: childReducer.loading,
+    allChildren: childReducer.allChildren
+})
+
+export default connect(mapStateToProps, { getAllChildren, deleteChild })(Child);
+// export default Child;
