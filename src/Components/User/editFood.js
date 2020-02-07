@@ -21,7 +21,7 @@ function EditFood(props) {
     const handleSubmit = event => {
         event.preventDefault()
         props.editFood(props.food)    
-        props.history.push(`/api/users/:id/children/:id/food/:id`)
+        props.history.push(`/api/food/:id`)
     }
 
     return (

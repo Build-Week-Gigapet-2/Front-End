@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 // import Spinner from '../layout/Spinner';
 import { getAllChildren } from '../../Actions/Children';
 
-function ChildCard(props){
+function ChildCard(props, id){
 
     // const loading = props.loading;
     

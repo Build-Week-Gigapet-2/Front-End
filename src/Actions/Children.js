@@ -35,10 +35,10 @@ export const getAllChildren = (id) => dispatch => {
     });
 }
 
-export const getUserChild = () => dispatch => {
+export const getUserChild = (id) => dispatch => {
     console.log('dispatch?')
     dispatch({ type: FETCH_CHILD_REQUEST })
-        AxiosWithAuth().get(`/api/users/:id/children/:id`)
+        AxiosWithAuth().get(`/api/users/${id}/children/${id}`)
             .then(res =>{
                 console.log(res.data, '<- Data in childfetch dispatch')
                 dispatch({
@@ -55,8 +55,8 @@ export const getUserChild = () => dispatch => {
             })
 }
 
-export const addChild = (child) => dispatch => {
-    AxiosWithAuth().post('/api/users/:id/children', child)
+export const addChild = (child, id) => dispatch => {
+    AxiosWithAuth().post(`/api/users/${id}/children`, child)
     .then(res => {
         dispatch({ 
             type: ADD_CHILD_SUCCESS,
@@ -71,8 +71,8 @@ export const addChild = (child) => dispatch => {
     })
 }
 
-export const editChild = (child) => dispatch => {
-    AxiosWithAuth().put(`/api/users/:id/children/:id`, child)
+export const editChild = (child, id) => dispatch => {
+    AxiosWithAuth().put(`/api/users/${id}/children/:id`, child)
     .then(res => {
         dispatch({ 
             type: EDIT_CHILD_SUCCESS,
@@ -87,9 +87,9 @@ export const editChild = (child) => dispatch => {
     })
 }
 
-export const deleteChild = (child) => dispatch => {
+export const deleteChild = (child, id) => dispatch => {
     console.log('delete dispatch')
-    AxiosWithAuth().delete(`/api/users/:id/children/${child.id}`)
+    AxiosWithAuth().delete(`/api/users/${id}/children/${child.id}`)
         .then(res => {
             console.log(res.data)
             dispatch({ 
