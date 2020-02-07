@@ -1,8 +1,24 @@
 import React from 'react';
 import { Typography } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
 
 
-export default function Home() {
+export default function Home()
+{
+
+    //  Styles
+    const styles = makeStyles({
+        coverImage: {
+            position: 'relative',
+            height: '500px',
+            overflow: 'hidden',
+            margin: '50px 0',
+            backgroundImage: "url('https://images.unsplash.com/photo-1523472721958-978152f4d69b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80')",
+            backgroundSize: 'cover',
+            backgroundAttachment: 'fixed',
+        }
+    })();
+
     return (
         <div>
             <Typography variant="h1" component="h1">
@@ -12,7 +28,7 @@ export default function Home() {
                 Helping parents track their children's nutrition with an interactive pet
             </Typography>
 
-            <div class='cover-image'></div>
+            <div class={styles.coverImage}></div>
 
             <Typography variant="p" component="p">
                 Getting our kids to eat healthy can be a daunting task or epic struggle full of chasing, throwing, and straight out refusal.
