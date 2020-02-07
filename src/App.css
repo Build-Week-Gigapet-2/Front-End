@@ -17,11 +17,15 @@ h6 {
   cursor: default;
 }
 
+button {
+  margin: 10px;
+}
+
+
 
 .separator {
   margin: 50px 0;
 }
-
 
 .content h1 {
   margin-bottom: 50px;
@@ -35,7 +39,6 @@ h6 {
   opacity: 0;
 }
 
-
 .center {
   display: flex;
   justify-content: center;
@@ -46,6 +49,17 @@ h6 {
   position: absolute;
   height: 100%;
   width: 100%;
+}
+
+
+
+.cover-image {
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+  margin: 50px 0;
+  background-image: url('https://images.unsplash.com/photo-1523472721958-978152f4d69b');
+  background-size: cover;
 }
 
 

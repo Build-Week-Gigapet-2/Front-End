@@ -12,6 +12,8 @@ export default function Home() {
                 Helping parents track their children's nutrition with an interactive pet
             </Typography>
 
+            <div class='cover-image'></div>
+
             <Typography variant="p" component="p">
                 Getting our kids to eat healthy can be a daunting task or epic struggle full of chasing, throwing, and straight out refusal.
                 With Gigapet, your child can watch their pet grow with every healthy choice they make,
