@@ -17,8 +17,8 @@ h6 {
   cursor: default;
 }
 
-button {
-  margin: 10px;
+button.MuiButton-outlined {
+  margin: 5px;
 }
 
 
