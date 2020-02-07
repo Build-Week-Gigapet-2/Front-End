@@ -6,39 +6,35 @@ import ChildCard from '../Children/childCard';
 import ChildPage from '../User/ChildPage';
 import FoodItem from '../Children/foodItem';
 import { makeStyles } from '@material-ui/core/styles';
-import Vegetables from './Images/vegetables.png';
 
-
-export default function UserPage() {
-
-    const pageStyle = makeStyles({
-        root: {
-            backgroundImage: `url(${Vegetables})`,
-            backgroundRepeat: 'repeat',
-            backgroundSize: '100%',
-            backgroundBlendMode: 'lighten',
-        }
-    })
-
-    const styledFonts = makeStyles({
-        root:{
+export default function UserPage()
+{
+    const styles = makeStyles({
+        coverImage: {
+            position: 'relative',
+            height: '500px',
+            overflow: 'hidden',
+            margin: '50px 0',
+            backgroundImage: "url('https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80')",
+            backgroundSize: 'cover',
+            backgroundAttachment: 'fixed',
+        },
+        text: {
             fontSize: '2rem',
             opacity: '2'
         }
-    })
+    })();
 
-    const styles = styledFonts();
-    const page = pageStyle();
-    
     return (
-        <div className={page.root}>
-            <h2 className={styles.root}>All Children</h2>
+        <div>
+            <div className={styles.coverImage}></div>
+            <h2 className={styles.text}>All Children</h2>
             <ChildCard />
-            <h2 className={styles.root}>All Food</h2>
+            <h2 className={styles.text}>All Food</h2>
             <FoodItem />
-            <h2 className={styles.root}>Something Missing? Add More Food!</h2>
+            <h2 className={styles.text}>Something Missing? Add More Food!</h2>
             <FoodForm />
-            <h2 className={styles.root}>What's the Intake look like?</h2>
+            <h2 className={styles.text}>What's the Intake look like?</h2>
             <FoodGraph />
         </div>
     )
