@@ -3,7 +3,11 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { register } from '../../Actions/auth';
 import { makeStyles } from '@material-ui/core/styles';
-import { Button, TextField, Typography } from '@material-ui/core';
+import Button from '@material-ui/core/Button';
+import Apple from './Images/apple.png';
+import Pear from './Images/pear.png';
+import Potatoes from './Images/potatoes.png';
+import Background from './Images/Background.jpg';
 
 function Register(props) {
     const [newUser, setNewUser] = useState({
@@ -26,45 +30,106 @@ function Register(props) {
         props.history.push('/api/auth/login')
     }
 
-    const classes = makeStyles(theme => ({
-            input: {
-                marginBottom: '10px'
-            },
-    }))();
+    //Styling Begins here
+
+    const pageStyle = makeStyles({
+        root: {
+            backgroundColor: '#fff',
+            height: '100vh',
+            backgroundImage: `url(${Background})`,
+            backgroundRepeat: 'repeat',
+            backgroundSize: '21%'
+        }
+    })
+
+    const styledForm = makeStyles({
+        root: {
+            display: "flex",
+            flexDirection: 'column',
+            padding: '0 27vw',
+        }
+    });
+
+    const styledInput = makeStyles({
+        root: {
+            margin: '10px 0',
+            backgroundColor: 'white',
+            borderRadius: 3,
+        }
+    });
+
+    const imageStyle = makeStyles({
+        root: {
+            height: "15vh",
+            padding: "120px 143px",
+        }
+    });
+
+    const bottomDiv = makeStyles({
+        root: {
+            padding: '0 24vw',
+            marginLeft: '25px'
+            
+        }
+    });
+
+    const styledLink = makeStyles({
+        root: {
+            textDecoration: 'none',
+            fontSize: '20px',
+            color: 'white',
+            border: '1px solid #DB5461',
+            padding: '5px 55px',
+            marginLeft: '1.5vw',
+            borderRadius: 3,
+            backgroundColor: '#DB5461'
+        }
+    });
+
+    const page = pageStyle();
+    const images = imageStyle();
+    const forms = styledForm();
+    const inputs = styledInput();
+    const signIn = bottomDiv();
+    const links = styledLink();
 
     return (
         <Fragment>
-            <div>
-                <Typography variant="h2" component="h1">
-                    <strong>Sign Up</strong> to Gigapet
-                </Typography>
-                <form onSubmit={handleSubmit} className='log-form'>
-                    <TextField
+            <div className={page.root}>
+                <div>
+                    <img src={Apple} alt='Happy Apple' className={images.root} />
+                    <img src={Pear} alt='Happy pear' className={images.root} />
+                    <img src={Potatoes} alt='Happy Potatoe' className={images.root} />
+                </div>
+
+
+                <form onSubmit={handleSubmit} className={forms.root}>
+
+                    <input
                         type='text'
-                        className={`${classes.input}`}
+                        className={inputs.root}
                         name='username'
-                        variant='outlined'
-                        label='Username'
+                        placeholder='Username'
                         value={newUser.username}
                         onChange={handleChange}
                     />
-                    <TextField
+
+                    <input
                         type='password'
-                        className={`${classes.input}`}
+                        className={inputs.root}
                         name='password'
-                        variant='outlined'
-                        label='Password'
+                        placeholder='Password'
                         value={newUser.password}
                         onChange={handleChange}
                     />
-                    <Button type='submit' className='log-btn'>Sign Up</Button>
+
+                    <Button type='submit' variant="contained" color="primary">Sign Up</Button>
                 </form>
-            </div>
-            <div className="reg">
-                <p>Already have an account?</p>
-                <Link to='/api/auth/login'>
-                    <Button> Sign In </Button>
-                </Link>
+
+                <div className={signIn.root}>
+                    <h3 style={{ color: '#DB5461', fontWeight: 'bold' }}>Already have an account?</h3>
+                    <Link to='/api/auth/login' className={links.root}>Sign In</Link>
+                </div>
             </div>
         </Fragment>
     )
