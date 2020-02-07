@@ -5,8 +5,26 @@ import { Link } from 'react-router-dom';
 import ChildCard from '../Children/childCard';
 import ChildPage from '../User/ChildPage';
 import FoodItem from '../Children/foodItem';
+import { makeStyles } from '@material-ui/core/styles';
+import Background from './Images/Background.jpg';
+
+
+
 
 export default function UserPage() {
+    // const pageStyle = makeStyles({
+    //     root: {
+    //         backgroundColor: '#fff',
+    //         // height: '100vh',
+    //         backgroundImage: `url(${Background})`,
+    //         backgroundRepeat: 'repeat',
+    //         backgroundSize: '21%',
+    //         background: 'rgba(f, f, f, 0.5)'
+    //     }
+    // })
+    
+    
+    // const page = pageStyle();
     return (
         <div>
             <p>User's Page</p>

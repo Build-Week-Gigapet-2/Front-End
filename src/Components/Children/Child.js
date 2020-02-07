@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { getAllChildren, deleteChild } from '../../Actions/Children';
 import { connect } from 'react-redux';
 import AddChild from '../User/addChild';
+import Button from '@material-ui/core/Button';
 
 const Child = (props) => {
 
@@ -12,24 +13,26 @@ const Child = (props) => {
         props.deleteChild(props.child);
     }
 
+
+
     return (
-        <div className="card">
-            <div className="header">
+        <div>
+            <div >
                 <div className="homebutton">
-                   <button> <Link to='/'>
+                   <Button variant="outlined"> <Link to='/'>
                         Home
-                    </Link></button>
-                    <button><Link to='/api/users/:id/children'/>Add Child</button>
+                    </Link></Button>
+                    <Button variant="outlined"><Link to='/api/users/:id/children'/>Add Child</Button>
                 </div>
             </div>
             
-            <div className="text">
+        <div>
                 <h4 className="child">
                 Name: {props.name}
                 </h4>
-                <button><Link to='/api/users/:id/children/:id'>View Child</Link></button>
-                <button><Link to='/api/users/:id/children/:id'>Edit Child</Link></button>
-                <button className="btn" onClick={handleDelete}>Delete</button>
+                <Button size="small" color="primary" variant="outlined"><Link to='/api/users/:id/children/:id'>View Child</Link></Button>
+                <Button size="small" color="primary" variant="outlined"><Link to='/api/users/:id/children/:id'>Edit Child</Link></Button>
+                <Button size="small" color="primary" variant="outlined" className="btn" onClick={handleDelete}>Delete</Button>
         </div>
 
         {/* <Link to='/' className="btn">Let's Eat!</Link> */}

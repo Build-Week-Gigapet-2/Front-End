@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import Child from './Child';
 import { connect } from 'react-redux';
+import Card from '@material-ui/core/Card'
 // import Spinner from '../layout/Spinner';
 import { getAllChildren } from '../../Actions/Children';
 
