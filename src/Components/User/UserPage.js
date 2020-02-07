@@ -6,35 +6,39 @@ import ChildCard from '../Children/childCard';
 import ChildPage from '../User/ChildPage';
 import FoodItem from '../Children/foodItem';
 import { makeStyles } from '@material-ui/core/styles';
-import Background from './Images/Background.jpg';
-
-
+import Vegetables from './Images/vegetables.png';
 
 
 export default function UserPage() {
-    // const pageStyle = makeStyles({
-    //     root: {
-    //         backgroundColor: '#fff',
-    //         // height: '100vh',
-    //         backgroundImage: `url(${Background})`,
-    //         backgroundRepeat: 'repeat',
-    //         backgroundSize: '21%',
-    //         background: 'rgba(f, f, f, 0.5)'
-    //     }
-    // })
+
+    const pageStyle = makeStyles({
+        root: {
+            backgroundImage: `url(${Vegetables})`,
+            backgroundRepeat: 'repeat',
+            backgroundSize: '100%',
+            backgroundBlendMode: 'lighten',
+        }
+    })
+
+    const styledFonts = makeStyles({
+        root:{
+            fontSize: '2rem',
+            opacity: '2'
+        }
+    })
+
+    const styles = styledFonts();
+    const page = pageStyle();
     
-    
-    // const page = pageStyle();
     return (
-        <div>
-            <p>User's Page</p>
-            <h2>All Children</h2>
+        <div className={page.root}>
+            <h2 className={styles.root}>All Children</h2>
             <ChildCard />
-            <h2>All Food</h2>
+            <h2 className={styles.root}>All Food</h2>
             <FoodItem />
-            <h2>Something Missing? Add More Food!</h2>
+            <h2 className={styles.root}>Something Missing? Add More Food!</h2>
             <FoodForm />
-            <h2>What's the Intake look like?</h2>
+            <h2 className={styles.root}>What's the Intake look like?</h2>
             <FoodGraph />
         </div>
     )
