@@ -32,7 +32,6 @@ export default function UserPage() {
     
     return (
         <div className={page.root}>
-            <p>User's Page</p>
             <h2 className={styles.root}>All Children</h2>
             <ChildCard />
             <h2 className={styles.root}>All Food</h2>
