@@ -17,22 +17,16 @@ const Child = (props) => {
 
     return (
         <div>
-            <div >
-                <div className="homebutton">
-                   <Button variant="outlined"> <Link to='/'>
-                        Home
-                    </Link></Button>
-                    <Button variant="outlined"><Link to='/api/users/:id/children'/>Add Child</Button>
-                </div>
-            </div>
-            
-        <div>
-                <h4 className="child">
+         
+        <div className="child">
+                <h4>
                 Name: {props.name}
                 </h4>
+                <div className="childButtons">
                 <Button size="small" color="primary" variant="outlined"><Link to='/api/users/:id/children/:id'>View Child</Link></Button>
                 <Button size="small" color="primary" variant="outlined"><Link to='/api/users/:id/children/:id'>Edit Child</Link></Button>
                 <Button size="small" color="primary" variant="outlined" className="btn" onClick={handleDelete}>Delete</Button>
+                </div>
         </div>
 
         {/* <Link to='/' className="btn">Let's Eat!</Link> */}

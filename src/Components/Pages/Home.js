@@ -4,7 +4,7 @@ import { Typography } from '@material-ui/core';
 
 export default function Home() {
     return (
-        <div>
+        <div className="home">
             <Typography variant="h1" component="h1">
                 Welcome to <strong>Gigapet</strong> 
             </Typography>
