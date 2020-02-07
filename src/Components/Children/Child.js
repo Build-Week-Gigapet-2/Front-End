@@ -4,6 +4,8 @@ import { getAllChildren, deleteChild } from '../../Actions/Children';
 import { connect } from 'react-redux';
 import AddChild from '../User/addChild';
 import Button from '@material-ui/core/Button';
+import { makeStyles } from '@material-ui/core/styles';
+
 
 const Child = (props) => {
 
@@ -13,7 +15,15 @@ const Child = (props) => {
         props.deleteChild(props.child);
     }
 
+    const styledFonts = makeStyles({
+        root:{
+            fontSize: '1.5rem'
+        }
+    })
 
+
+
+    const styles = styledFonts();
 
     return (
         <div>
@@ -27,7 +37,7 @@ const Child = (props) => {
             </div>
             
         <div>
-                <h4 className="child">
+                <h4 className={styles.root}>
                 Name: {props.name}
                 </h4>
                 <Button size="small" color="primary" variant="outlined"><Link to='/api/users/:id/children/:id'>View Child</Link></Button>
