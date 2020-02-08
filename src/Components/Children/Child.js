@@ -17,7 +17,8 @@ const Child = (props) => {
 
     const styledFonts = makeStyles({
         root:{
-            fontSize: '1.5rem'
+            fontSize: '1.5rem',
+            
         }
     })
 
@@ -36,8 +37,8 @@ const Child = (props) => {
                 </div>
             </div>
             
-        <div>
-                <h4 className={styles.root}>
+        <div className="childcard">
+                <h4 className="childname">
                 Name: {props.name}
                 </h4>
                 <div className="childButtons">

@@ -27,7 +27,9 @@ export default function UserPage()
 
     return (
         <div>
+            
             <div className={styles.coverImage}></div>
+            <section className="userpage">
             <h2 className={styles.text}>All Children</h2>
             <ChildCard />
             <h2 className={styles.text}>All Food</h2>
@@ -36,6 +38,7 @@ export default function UserPage()
             <FoodForm />
             <h2 className={styles.text}>What's the Intake look like?</h2>
             <FoodGraph />
+            </section>
         </div>
     )
 }
