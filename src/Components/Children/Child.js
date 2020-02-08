@@ -40,9 +40,11 @@ const Child = (props) => {
                 <h4 className={styles.root}>
                 Name: {props.name}
                 </h4>
+                <div className="childButtons">
                 <Button size="small" color="primary" variant="outlined"><Link to='/api/users/:id/children/:id'>View Child</Link></Button>
                 <Button size="small" color="primary" variant="outlined"><Link to='/api/users/:id/children/:id'>Edit Child</Link></Button>
                 <Button size="small" color="primary" variant="outlined" className="btn" onClick={handleDelete}>Delete</Button>
+                </div>
         </div>
 
         {/* <Link to='/' className="btn">Let's Eat!</Link> */}

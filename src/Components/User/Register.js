@@ -35,10 +35,17 @@ function Register(props) {
     const pageStyle = makeStyles({
         root: {
             backgroundColor: '#fff',
-            height: '100vh',
+            // height: '100vh',
             backgroundImage: `url(${Background})`,
-            backgroundRepeat: 'repeat',
-            backgroundSize: '21%'
+            // backgroundRepeat: 'repeat',
+            backgroundSize: 'cover',
+            backgroundAttachment: 'fixed',
+            overflow: 'hidden',
+            position: 'relative',
+            height: '950px;',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
         }
     })
 
@@ -87,19 +94,19 @@ function Register(props) {
     });
 
     const page = pageStyle();
-    const images = imageStyle();
+    // const images = imageStyle();
     const forms = styledForm();
-    const inputs = styledInput();
-    const signIn = bottomDiv();
-    const links = styledLink();
+    // const inputs = styledInput();
+    // const signIn = bottomDiv();
+    // const links = styledLink();
 
     return (
         <Fragment>
             <div className={page.root}>
                 <div>
-                    <img src={Apple} alt='Happy Apple' className={images.root} />
-                    <img src={Pear} alt='Happy pear' className={images.root} />
-                    <img src={Potatoes} alt='Happy Potatoe' className={images.root} />
+                    <img src={Apple} alt='Happy Apple' className="apple" />
+                   
+                   
                 </div>
 
 
@@ -107,7 +114,7 @@ function Register(props) {
 
                     <input
                         type='text'
-                        className={inputs.root}
+                        className="registerinput"
                         name='username'
                         placeholder='Username'
                         value={newUser.username}
@@ -116,7 +123,7 @@ function Register(props) {
 
                     <input
                         type='password'
-                        className={inputs.root}
+                        className="registerinput"
                         name='password'
                         placeholder='Password'
                         value={newUser.password}
@@ -125,12 +132,14 @@ function Register(props) {
 
                     <Button type='submit' variant="contained" color="primary">Sign Up</Button>
                 </form>
-
-                <div className={signIn.root}>
+                <img src={Pear} alt='Happy pear' className="pear" />
+                <div className="register">
                     <h3 style={{ color: '#DB5461', fontWeight: 'bold' }}>Already have an account?</h3>
-                    <Link to='/api/auth/login' className={links.root}>Sign In</Link>
+                    <Link to='/api/auth/login' className="signbutton">Sign In</Link>
                 </div>
+                <img src={Potatoes} alt='Happy Potatoe' className="potatoes" />
             </div>
+            
         </Fragment>
     )
 }

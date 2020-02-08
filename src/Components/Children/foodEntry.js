@@ -33,12 +33,7 @@ const FoodEntry = (props) => {
     return (
         <div className="card">
             <div className="header">
-                <div className="homebutton">
-                   <Button variant="outlined"> <Link to='/'>
-                        Home
-                    </Link></Button>
-                    <Button variant="outlined"><Link to='/api/users/:id/children'/>Add Food</Button>
-                </div>
+               
             </div>
             
             <div className="text">
