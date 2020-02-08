@@ -27,6 +27,7 @@ import UserPage from './Components/User/UserPage';
 import { Container } from '@material-ui/core';
 
 // // Importing FormPage Components
+import EditFood from './Components/User/editFood';
 
 // import FoodForm from './Components/User/foodForm';
 import AddChild from './Components/User/addChild';
@@ -48,7 +49,7 @@ function App() {
                     <PrivateRoute exact path='/api/users/:id/children' component={AddChild} />
                     <PrivateRoute exact path='/api/users/:id/children/:id' component={editChild} />
                     <PrivateRoute exact path='/api/users/:id/children/:id' component={ChildPage} />
-                    {/* <PrivateRoute exact path='/api/' component={FoodForm} /> */}
+                    <PrivateRoute exact path='/api/food/:id' component={EditFood} />
                     <PrivateRoute exact path='/logout' component={Logout} />
                   </Switch>
               </Container>

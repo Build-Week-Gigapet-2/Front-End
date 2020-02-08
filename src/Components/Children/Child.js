@@ -8,7 +8,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 
 const Child = (props) => {
-
+    console.log(props)
     const handleDelete = (e) => {
         console.log('Handle Delete')
         e.preventDefault();

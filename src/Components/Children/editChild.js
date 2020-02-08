@@ -4,9 +4,12 @@ import { editChild } from '../../Actions/Children';
 import FoodForm from '../User/foodForm';
 import EditFood from '../User/editFood';
 
-function EditChild(props) {
+function EditChild(props, id) {
     const [child, setChild] = useState({
         child: '',
+        user_id: 0,
+        child_id:0,
+        id: 0
        
     })
 
@@ -20,8 +23,8 @@ function EditChild(props) {
 
     const handleSubmit = event => {
         event.preventDefault()
-        props.editChild(props.child)    
-        props.history.push(`/api/users/1/children/2`)
+        props.editChild()    
+        props.history.push(`/api/users/1/children/1`)
     }
 
     return (
@@ -33,7 +36,7 @@ function EditChild(props) {
                     type='text'
                     name='childname'
                     placeholder='Name'
-                    defaultValue={child.name}
+                    defaultValue={child.child}
                     onChange={handleChange}
                 />
                 <button className='save'>Save Changes</button>

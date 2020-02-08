@@ -17,11 +17,15 @@ h6 {
   cursor: default;
 }
 
+button.MuiButton-outlined {
+  margin: 5px;
+}
+
+
 
 .separator {
   margin: 50px 0;
 }
-
 
 .content h1 {
   margin-bottom: 50px;
@@ -34,7 +38,6 @@ h6 {
 .hide {
   opacity: 0;
 }
-
 
 .center {
   display: flex;

@@ -105,7 +105,7 @@ export const addFood = (food) => dispatch => {
 
 
 export const editFood = (food) => dispatch => {
-    AxiosWithAuth().put(`/api/food/${food.id}`, food)
+    AxiosWithAuth().put(`/api/food/18`, food)
     .then(res => {
         dispatch({ 
             type: EDIT_FOOD_SUCCESS,

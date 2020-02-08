@@ -22,6 +22,9 @@ export const initialState = {
         date: '',
         unit_measurement: '',
         quantity: '',
+        user_id: 0,
+        child_id: 0,
+        id: 0,
       }
     ],
 
@@ -30,7 +33,10 @@ export const initialState = {
         category_id: 0,
         date: '',
         unit_measurement: '',
-        quantity: ''
+        quantity: '',
+        user_id: 0,
+        child_id: 0,
+        id: 0,
        
     },
 

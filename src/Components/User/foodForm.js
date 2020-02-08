@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { actionCreators } from '../../Actions/Food'
 
-const FoodForm = ({setFormState, setId, actions}) => {
+const FoodForm = ({setId, actions}) => {
     const [food, setFood] = useState({
         name: '',
         category_id: 0,
