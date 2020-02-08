@@ -42,7 +42,6 @@ const AddChild = ({setFormState, id, actions, history}) => {
             <h3>Add New Child</h3>
             
                 <div className='newchild'>
-                  
                         <input type='text' name='newChild' placeholder='Child Name' onChange={handleInstructions} />
                         <button type='submit' onClick={addChild}>Add Child</button> 
                 </div>

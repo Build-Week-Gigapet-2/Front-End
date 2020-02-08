@@ -153,3 +153,25 @@ input{
 .logininput{
   width: 200px;
 }
+
+.apple{
+  height: 200px;
+  position: relative;
+  margin-bottom: 40px;
+  
+}
+
+.pear{
+  height: 200px;
+  position: relative;
+  margin-bottom: 40px;
+  margin-top: 30px;
+  
+}
+
+.potatoes{
+  height: 200px;
+  position: relative;
+  margin-top: 40px;
+  
+}
