@@ -105,7 +105,51 @@ h1{
   text-shadow: 2px 2px 4px dodgerblue;
 }
 
-.home{
-  height: 474px;
+
+.dino{
+  height: 200px;
+  position: relative;
+  margin-bottom: 40px;
+  
 }
 
+.fruit{
+  height: 200px;
+  margin-top: 40px;
+}
+
+.eggplant{
+  height: 200px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.signbutton{
+  
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  border: 1px solid #DB5461;
+  padding: 5px 55px;
+  margin-left: 10px;
+  border-radius: 3px;
+  background-color: #DB5461;
+  box-shadow: 3px 3px 5px red;
+  /* margin-bottom: 200px; */
+ 
+   
+}
+
+.signbutton:hover{
+  background-color: rgb(168, 8, 8);
+}
+
+input{
+  box-shadow: 2px 3px 5px black;
+  margin-bottom: 5px;
+  
+}
+
+.logininput{
+  width: 200px;
+}

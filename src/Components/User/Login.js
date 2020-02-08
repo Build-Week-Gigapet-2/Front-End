@@ -36,17 +36,25 @@ function Login(props) {
 
     }
 
-    //Styling Begins here
+    // Styling Begins here
 
     const pageStyle = makeStyles({
         root: {
             backgroundColor: '#fff',
-            height: '100vh',
+            // height: '100vh',
             backgroundImage: `url(${Background})`,
-            backgroundRepeat: 'repeat',
-            backgroundSize: '21%'
+            // backgroundRepeat: 'repeat',
+            backgroundSize: 'cover',
+            backgroundAttachment: 'fixed',
+            overflow: 'hidden',
+            position: 'relative',
+            height: '950px;',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
         }
     })
+   
 
     const styledForm = makeStyles({
         root: {
@@ -56,46 +64,47 @@ function Login(props) {
         }
     });
 
-    const styledInput = makeStyles({
-        root: {
-            margin: '10px 0',
-            backgroundColor: 'white',
-            borderRadius: 3,
-        }
-    });
+    // const styledInput = makeStyles({
+    //     root: {
+    //         margin: '10px 0',
+    //         backgroundColor: 'white',
+    //         borderRadius: 3,
+    //     }
+    // });
 
-    const imageStyle = makeStyles({
-        root: {
-            height: "15vh",
-            padding: "120px 120px",
-        }
-    });
+    // const imageStyle = makeStyles({
+    //     root: {
+    //         height: "15vh",
+    //         padding: "120px 120px",
+    //         position: 'relative',
+    //     }
+    // });
 
-    const bottomDiv = makeStyles({
-        root: {
-            padding: '0 26vw'
-        }
-    })
+    // const bottomDiv = makeStyles({
+    //     root: {
+    //         padding: '0 26vw'
+    //     }
+    // })
 
-    const styledLink = makeStyles({
-        root: {
-            textDecoration: 'none',
-            fontSize: '20px',
-            color: 'white',
-            border: '1px solid #DB5461',
-            padding: '5px 55px',
-            marginLeft: '1vw',
-            borderRadius: 3,
-            backgroundColor: '#DB5461'
-        }
-    })
+    // const styledLink = makeStyles({
+    //     root: {
+    //         textDecoration: 'none',
+    //         fontSize: '20px',
+    //         color: 'white',
+    //         border: '1px solid #DB5461',
+    //         padding: '5px 55px',
+    //         marginLeft: '1vw',
+    //         borderRadius: 3,
+    //         backgroundColor: '#DB5461'
+    //     }
+    // })
 
     const page = pageStyle();
-    const images = imageStyle();
+    // const images = imageStyle();
     const forms = styledForm();
-    const inputs = styledInput();
-    const signUp = bottomDiv();
-    const links = styledLink();
+    // const inputs = styledInput();
+    // const signUp = bottomDiv();
+    // const links = styledLink();
 
 
 
@@ -103,15 +112,13 @@ function Login(props) {
         <Fragment >
             <div className={page.root}>
                 <div>
-                    <img src={Dino} alt='Happy Alien' className={images.root} />
-                    <img src={Fruits} alt='Assortment of Fruit' className={images.root} />
-                    <img src={Eggplant} alt='Happy Eggplant' className={images.root} />
+                    <img src={Dino} alt='Happy Alien' className="dino"/>
                 </div>
 
                 <form onSubmit={handleSubmit} className={forms.root}>
                     <input
                         type='text'
-                        className={inputs.root}
+                        className="logininput"
                         name='username'
                         placeholder='Username'
                         value={userData.username}
@@ -119,20 +126,23 @@ function Login(props) {
                     />
                     <input
                         type='password'
-                        className={inputs.root}
+                        className="logininput"
                         name='password'
                         placeholder='Password'
                         value={userData.password}
                         onChange={handleChange}
                     />
 
-                    <Button type='submit' variant="contained" color="primary" >Sign In</Button>
+                    <Button type='submit' variant="contained" color="primary" className="loginbutton">Sign In</Button>
                 </form>
 
-                <div className={signUp.root}>
+                <img src={Eggplant} alt='Happy Eggplant' className="eggplant" />
+
+                <div className="signup">
                     <h3 style={{ color: '#DB5461' }}>Don't have an account?</h3>
-                    <Link to='/api/auth/register' className={links.root} >Sign Up</Link>
+                    <Link to='/api/auth/register' className="signbutton" >Sign Up</Link>
                 </div>
+                <img src={Fruits} alt='Assortment of Fruit' className="fruit" />
             </div>
         </Fragment>
     )
