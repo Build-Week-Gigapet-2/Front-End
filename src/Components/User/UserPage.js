@@ -6,48 +6,35 @@ import ChildCard from '../Children/childCard';
 import ChildPage from '../User/ChildPage';
 import FoodItem from '../Children/foodItem';
 import { makeStyles } from '@material-ui/core/styles';
-import Background from './Images/Background.jpg';
-import Button from '@material-ui/core/Button';
 
+export default function UserPage()
+{
+    const styles = makeStyles({
+        coverImage: {
+            position: 'relative',
+            height: '500px',
+            overflow: 'hidden',
+            margin: '50px 0',
+            backgroundImage: "url('https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80')",
+            backgroundSize: 'cover',
+            backgroundAttachment: 'fixed',
+        },
+        text: {
+            fontSize: '2rem',
+            opacity: '2'
+        }
+    })();
 
-
-
-export default function UserPage(props) {
-    // const pageStyle = makeStyles({
-    //     root: {
-    //         backgroundColor: '#fff',
-    //         // height: '100vh',
-    //         backgroundImage: `url(${Background})`,
-    //         backgroundRepeat: 'repeat',
-    //         backgroundSize: '21%',
-    //         background: 'rgba(f, f, f, 0.5)'
-    //     }
-    // })
-    
-    
-    // const page = pageStyle();
     return (
-        <div className="userpage">
-            <h1>Welcome to Gigapet User Dashboard!</h1>
-            <div className="homebutton">
-                   <Button className="homebutton" variant="outlined"> <Link to='/'>
-                        Home
-                    </Link></Button>
-                    <Button variant="outlined"><Link to='/api/users/:id/children'/>Add Child</Button>
-                </div>
-            <h2>All Children</h2>
+        <div>
+            <div className={styles.coverImage}></div>
+            <h2 className={styles.text}>All Children</h2>
             <ChildCard />
-            <h2>All Food</h2>
-            <div className="homebutton">
-                   <Button color="primary" variant="outlined"> <Link to='/'>
-                        Home
-                    </Link></Button>
-                    <Button color="primary" variant="outlined"><Link to='/api/users/:id/children'/>Add Food</Button>
-                </div>
+            <h2 className={styles.text}>All Food</h2>
             <FoodItem />
-            <h2>Something Missing? Add More Food!</h2>
+            <h2 className={styles.text}>Something Missing? Add More Food!</h2>
             <FoodForm />
-            <h2>What's the Intake look like?</h2>
+            <h2 className={styles.text}>What's the Intake look like?</h2>
             <FoodGraph />
         </div>
     )

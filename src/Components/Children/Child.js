@@ -4,22 +4,40 @@ import { getAllChildren, deleteChild } from '../../Actions/Children';
 import { connect } from 'react-redux';
 import AddChild from '../User/addChild';
 import Button from '@material-ui/core/Button';
+import { makeStyles } from '@material-ui/core/styles';
+
 
 const Child = (props) => {
-
+    console.log(props)
     const handleDelete = (e) => {
         console.log('Handle Delete')
         e.preventDefault();
         props.deleteChild(props.child);
     }
 
+    const styledFonts = makeStyles({
+        root:{
+            fontSize: '1.5rem'
+        }
+    })
 
+
+
+    const styles = styledFonts();
 
     return (
         <div>
-         
-        <div className="child">
-                <h4>
+            <div >
+                <div className="homebutton">
+                   <Button variant="outlined"> <Link to='/'>
+                        Home
+                    </Link></Button>
+                    <Button variant="outlined"><Link to='/api/users/:id/children'/>Add Child</Button>
+                </div>
+            </div>
+            
+        <div>
+                <h4 className={styles.root}>
                 Name: {props.name}
                 </h4>
                 <div className="childButtons">
