@@ -7,29 +7,22 @@ export default function FoodGraph(props)
 {
     //  Store graph data
     //  -> childs diet intake
-    const [graphData, setGraphData] = useState([
-        {id:"Fruit", label:"Fruit", value:1},
-        {id:"Vegetable", label:"Vegetable", value:1},
-        {id:"Whole Grains", label:"Whole Grains", value:1},
-        {id:"Meat", label:"Meat", value:1},
-        {id:"Dairy", label:"Dairy", value:1},
-        {id:"Fats & Oils", label:"Fats & Oils", value:1},
-        {id:"Treats", label:"Treats", value:1}
-    ]);
+    const [graphData, setGraphData] = useState([]);
 
     //  Is graph data being loaded
     const [isLoading, setIsLoading] = useState(true);
 
-    //  Fetch a child's food logs
+    //  Fetch all of users food entries
     useEffect(() =>
     {
         AxiosWithAuth()
-          .get('/api/users/1/children/1/food')
+          .get(`/api/food`)
           .then((res) =>
           {
               //  Add data to graph
-              setGraphData(
-                  res.data.map((item, array) =>
+              setGraphData([
+                  ...graphData,
+                  ...res.data.map((item, array) =>
                   {
                       return {
                           id: item.name,
@@ -37,7 +30,7 @@ export default function FoodGraph(props)
                           value: item.quantity
                       }
                   })
-              );
+              ]);
 
               //  Show graph + hide loader
               setIsLoading(false);
