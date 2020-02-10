@@ -1,6 +1,7 @@
 import React from 'react';
 import { Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import FoodForm from '../User/foodForm';
 
 
 export default function Home()
@@ -41,6 +42,7 @@ export default function Home()
                 With Gigapet, your child can watch their pet grow with every healthy choice they make,
                 encouraging them to eat healthier and allowing them the chance to have fun doing it!
             </Typography>
+            {/* <FoodForm /> */}
         </div>
     )
 }

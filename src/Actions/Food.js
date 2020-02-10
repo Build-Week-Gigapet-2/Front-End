@@ -120,9 +120,9 @@ export const editFood = (food) => dispatch => {
     })
 }
 
-export const deleteFood = (food) => dispatch => {
+export const deleteFood = (food, id) => dispatch => {
     console.log('delete dispatch')
-    AxiosWithAuth().delete(`/api/food/${food.id}`)
+    AxiosWithAuth().delete(`/api/food/${id}`, food)
         .then(res => {
             console.log(res.data)
             dispatch({ 

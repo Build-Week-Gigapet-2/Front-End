@@ -7,7 +7,7 @@ const FoodForm = ({setId, actions}) => {
     const [food, setFood] = useState({
         name: '',
         category_id: 0,
-        date: '',
+        // date: '',
         quantity: '',
         unit_measurement: ''
     })
@@ -20,7 +20,7 @@ const FoodForm = ({setId, actions}) => {
             [e.target.name]: e.target.value
 
         })
-        console.log(e.target.value)
+        // console.log(e.target.value)
     }
 
 
@@ -28,7 +28,6 @@ const FoodForm = ({setId, actions}) => {
         e.preventDefault()
         actions.addFood(food, setId)
        
-
     }
 
     return (
@@ -36,7 +35,7 @@ const FoodForm = ({setId, actions}) => {
         <h1>Add New Food</h1>
         <form onSubmit={handleSubmit}>
             <input type='text' name='name' placeholder='Name' defaultValue={food.name} onChange={handleChange} />
-            <input type='text' name='date' placeholder='Date' defaultValue={food.date} onChange={handleChange} />
+            {/* <input type='text' name='date' placeholder='Date' defaultValue={food.date} onChange={handleChange} /> */}
             <input type='text' name='quantity' placeholder='Quantity' defaultValue={food.quantity} onChange={handleChange} />
             <input type='text' name='unit_measurement' placeholder='Unit of Measurement' Value={food.unit_measurement} onChange={handleChange} />
            
