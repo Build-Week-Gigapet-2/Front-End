@@ -26,28 +26,20 @@ function EditFood(props) {
 
     return (
         <div className='edit-card'>
-            <form onSubmit={handleSubmit} className='edit-form'>
-                <h1>Update Food</h1>
-                <label>Name</label>
+            <h1>Update Food</h1>
+            <form onSubmit={handleSubmit} className='foodform'>
+                
                 <input 
+                    className="foodinput"
                     type='text'
                     name='name'
-                    placeholder='Title'
+                    placeholder='Name'
                     value={food.name}
                     onChange={handleChange}
                 />
 
-                <label>Date</label>
                 <input 
-                    type='text'
-                    name='date'
-                    placeholder='Date'
-                    value={food.date}
-                    onChange={handleChange}
-                />
-
-                <label>Quantity</label>
-                <input 
+                    className="foodinput"
                     type='text'
                     name='quantity'
                     placeholder='Quantity'
@@ -55,8 +47,8 @@ function EditFood(props) {
                     onChange={handleChange}
                 />
 
-                <label>Unit of Measurement</label>
                 <input 
+                    className="foodinput"
                     type='text'
                     name='unit_measurement'
                     placeholder='Unit of Measurement'
@@ -64,7 +56,7 @@ function EditFood(props) {
                     onChange={handleChange}
                 />
 
-                <select onChange={handleChange}>
+                <select className="fooddropdown" onChange={handleChange}>
                     <option  value={food.category_id=1}>Fruit</option>
                     <option value={food.category_id=2}>Vegetable</option>
                     <option  value={food.category_id=3}>Whole Grains</option>
@@ -74,7 +66,7 @@ function EditFood(props) {
                     <option  value={food.category_id=7}>Treats</option>
                 </select>
 
-                <button className='save'>Save Changes</button>
+                <button className='foodsubmit'>Save Changes</button>
             </form>
         </div>
     )

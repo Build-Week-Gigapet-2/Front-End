@@ -29,8 +29,9 @@ function EditChild(props, id) {
 
     return (
         <div className='edit-card'>
-            <form onSubmit={handleSubmit} className='edit-form'>
-                <h1>Update Child</h1>
+             <h1>Update Child</h1>
+            <form className='foodform' onSubmit={handleSubmit}>
+               
                 <label>Name</label>
                 <input 
                     type='text'
