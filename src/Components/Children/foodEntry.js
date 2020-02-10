@@ -10,7 +10,7 @@ const FoodEntry = (props) => {
 
     const handleDelete = (e) => {
         console.log('Handle Delete')
-        e.preventDefault();
+        // e.preventDefault();
         props.deleteFood(props.food);
     }
 
@@ -37,14 +37,14 @@ const FoodEntry = (props) => {
                 <h4 className="foodname">
                 Name: {props.name}
                 </h4>
-                <p className="foodp">Date: {props.date}</p>
+                {/* <p className="foodp">Date: {props.date}</p> */}
                 <p className="foodp">Category: {props.category_id}</p>
                 <p className="foodp">Quantity: {props.quantity}</p>
                 <p className="foodp">Unit of Measurement: {props.unit_measurement}</p>
             <div className="foodbuttons">
                 <Button size="small" color="primary" variant="outlined"><Link to='/api/food/:id'>View Food</Link></Button>
                 <Button size="small" color="primary" variant="outlined"><Link to='/api/food/:id'>Edit Food</Link></Button>
-                <Button size="small" color="primary" variant="outlined" className="btn" onClick={handleDelete}>Delete</Button>
+                <Button size="small" color="primary" variant="outlined" className="btn" onClick={()=>handleDelete(props.id)}>Delete</Button>
             </div>
         </div>
 

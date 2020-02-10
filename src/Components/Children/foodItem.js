@@ -25,7 +25,7 @@ function FoodItem(props){
                         props.allFood.map(food =>{
                             return(
                                 <FoodEntry 
-                                    key={food.id}
+                                    id={food.id}
                                     name={food.name}
                                     date={food.date}
                                     quantity={food.quantity}

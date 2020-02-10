@@ -229,3 +229,68 @@ input{
   margin-left: 20px;
   margin-bottom: 5px;
 }
+
+.foodform{
+  margin: 3rem auto;
+  border: 1px solid black;
+  border-radius: .5rem;
+  padding: 1rem;
+  width: 280px;
+  height: 190px;
+  background: #2A2E39;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.foodinput{
+  width: 250px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+
+.foodinput:hover{
+  background-color: dodgerblue;
+  box-shadow: 3px 3px 5px dodgerblue;
+  
+}
+
+.fooddropdown{
+  box-shadow: 1px 2px 4px black;
+  height: 22px;
+  border-radius: 3px;
+  /* background-color: #C0FF4C */
+  width: 255px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+
+.fooddropdown:hover{
+  background-color: dodgerblue;
+  box-shadow: 3px 3px 5px dodgerblue;
+}
+
+.foodsubmit{
+  box-shadow: 1px 2px 4px black;
+  width: 255px;
+  margin-top: 5px;
+
+}
+
+.foodsubmit:hover{
+  box-shadow: 3px 4px 5px dodgerblue;
+}
+
+h1{
+  margin-left: 250px;
+}
+
+h6{
+  color: black;
+  text-shadow: 2px 2px 4px dodgerblue;
+  font-size: 28px;
+  margin-left: 50px;
+}
