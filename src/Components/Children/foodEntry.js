@@ -31,22 +31,21 @@ const FoodEntry = (props) => {
     const parStyle = styledPar();
 
     return (
-        <div className="card">
-            <div className="header">
-               
-            </div>
-            
+        <div className="foodcard">
+           
             <div className="text">
-                <h4 className={styles.root}>
+                <h4 className="foodname">
                 Name: {props.name}
                 </h4>
-                <p className={parStyle.root}>Date: {props.date}</p>
-                <p className={parStyle.root}>Category: {props.category_id}</p>
-                <p className={parStyle.root}>Quantity: {props.quantity}</p>
-                <p className={parStyle.root}>Unit of Measurement: {props.unit_measurement}</p>
+                <p className="foodp">Date: {props.date}</p>
+                <p className="foodp">Category: {props.category_id}</p>
+                <p className="foodp">Quantity: {props.quantity}</p>
+                <p className="foodp">Unit of Measurement: {props.unit_measurement}</p>
+            <div className="foodbuttons">
                 <Button size="small" color="primary" variant="outlined"><Link to='/api/food/:id'>View Food</Link></Button>
                 <Button size="small" color="primary" variant="outlined"><Link to='/api/food/:id'>Edit Food</Link></Button>
                 <Button size="small" color="primary" variant="outlined" className="btn" onClick={handleDelete}>Delete</Button>
+            </div>
         </div>
 
         {/* <Link to='/' className="btn">Let's Eat!</Link> */}
